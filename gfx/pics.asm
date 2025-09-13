@@ -263,8 +263,8 @@ PidgeotPicBack::       INCBIN "gfx/pokemon/back/pidgeotb.pic"
 StarmiePicFront::      INCBIN "gfx/pokemon/front/starmie.pic"
 StarmiePicBack::       INCBIN "gfx/pokemon/back/starmieb.pic"
 
-RedPicBack::           INCBIN "gfx/player/redb.pic"
-OldManPicBack::        INCBIN "gfx/battle/oldmanb.pic"
+RedPicBack::           INCBIN "gfx/player/redb.pic"               ;redb and oldmanb must remain together
+OldManPicBack::        INCBIN "gfx/battle/oldmanb.pic"            ;redb and oldmanb must remain together
 
 
 SECTION "Pics 5", ROMX
@@ -309,8 +309,8 @@ WartortlePicFront::    INCBIN "gfx/pokemon/front/wartortle.pic"
 WartortlePicBack::     INCBIN "gfx/pokemon/back/wartortleb.pic"
 CharizardPicFront::    INCBIN "gfx/pokemon/front/charizard.pic"
 CharizardPicBack::     INCBIN "gfx/pokemon/back/charizardb.pic"
-FossilAerodactylPic::  INCBIN "gfx/pokemon/front/fossilaerodactyl.pic"
-GhostPic::             INCBIN "gfx/battle/ghost.pic"
+;FossilAerodactylPic::  INCBIN "gfx/pokemon/front/fossilaerodactyl.pic"
+;GhostPic::             INCBIN "gfx/battle/ghost.pic"
 OddishPicFront::       INCBIN "gfx/pokemon/front/oddish.pic"
 OddishPicBack::        INCBIN "gfx/pokemon/back/oddishb.pic"
 GloomPicFront::        INCBIN "gfx/pokemon/front/gloom.pic"
@@ -325,7 +325,6 @@ VictreebelPicFront::   INCBIN "gfx/pokemon/front/victreebel.pic"
 VictreebelPicBack::    INCBIN "gfx/pokemon/back/victreebelb.pic"
 MewPicFront::          INCBIN "gfx/pokemon/front/mew.pic"
 MewPicBack::           INCBIN "gfx/pokemon/back/mewb.pic"
-
 
 SECTION "Trainer Pics", ROMX
 
@@ -375,3 +374,8 @@ LoreleiPic::       INCBIN "gfx/trainers/lorelei.pic"
 ChannelerPic::     INCBIN "gfx/trainers/channeler.pic"
 AgathaPic::        INCBIN "gfx/trainers/agatha.pic"
 LancePic::         INCBIN "gfx/trainers/lance.pic"
+
+SECTION "Pics 7", ROMX
+FossilKabutopsPic::    INCBIN "gfx/pokemon/front/fossilkabutops.pic"    ; Fossilkabutops, aerodactyl, and ghost must be stored together
+FossilAerodactylPic::  INCBIN "gfx/pokemon/front/fossilaerodactyl.pic"  ; Fossilkabutops, aerodactyl, and ghost must be stored together
+GhostPic::             INCBIN "gfx/battle/ghost.pic"                    ; Fossilkabutops, aerodactyl, and ghost must be stored together
