@@ -20,6 +20,8 @@ EvolutionAfterBattle:
 	push hl
 	push bc
 	push de
+	ld hl, wStartBattleLevels
+	push hl
 	ld hl, wPartyCount
 	push hl
 
@@ -27,11 +29,16 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld hl, wWhichPokemon
 	inc [hl]
 	pop hl
+	pop de
+	ld a, [de]
+	ld [wTempCoins1], a
+	inc de
 	inc hl
 	ld a, [hl]
 	cp $ff ; have we reached the end of the party?
 	jp z, .done
 	ld [wEvoOldSpecies], a
+	push de
 	push hl
 	ld a, [wWhichPokemon]
 	ld c, a
@@ -93,7 +100,10 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jp c, Evolution_PartyMonLoop ; if so, go the next mon
 	jr .doEvolution
 .checkItemEvo
+	ld a, [wIsInBattle] ; are we in battle?
+	and a
 	ld a, [hli]
+	jp nz, .nextEvoEntry1 ; don't evolve if we're in a battle
 	; Bug: Wild encounters can cause stone evolutions without
 	; having any stones available. This was fixed in Yellow.
 	ld b, a ; evolution item
