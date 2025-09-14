@@ -7,6 +7,9 @@ SaffronMart_TextPointers:
 	dw_const SaffronMartSuperNerdText,    TEXT_SAFFRONMART_SUPER_NERD
 	dw_const SaffronMartCooltrainerFText, TEXT_SAFFRONMART_COOLTRAINER_F
 
+SaffronMartClerkText:
+	script_mart GREAT_BALL, HYPER_POTION, MAX_REPEL, ESCAPE_ROPE, FULL_HEAL, REVIVE
+
 SaffronMartSuperNerdText:
 	text_far _SaffronMartSuperNerdText
 	text_end

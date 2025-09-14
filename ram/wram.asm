@@ -377,7 +377,10 @@ wNPCMovementDirections:: ds 180
 NEXTU
 wDexRatingNumMonsSeen:: db
 wDexRatingNumMonsOwned:: db
-wDexRatingText:: db
+;wDexRatingText:: db
+wDexRatingText::  ;uses 5 bytes?
+wTrainerCardBadgeAttributes:: db
+; shinpokerednote: gbcnote: modified to match yellow
 
 NEXTU
 ; If a random number greater than this value is generated, then the player is
@@ -1030,8 +1033,9 @@ wScriptedNPCWalkCounter:: db
 
 	ds 1
 
+
 ; always 0 since full CGB support was not implemented
-wOnCGB:: db
+;wOnCGB:: db 			;moved to hram as hGBC
 
 ; if running on SGB, it's 1, else it's 0
 wOnSGB:: db
@@ -1064,7 +1068,13 @@ wPalPacket::
 
 ; This union spans 49 bytes.
 UNION
-wPartyMenuBlkPacket:: ds $30
+;wPartyMenuBlkPacket:: ds $30
+wPartyMenuBlkPacket::
+; $30 bytes
+	ds 9
+;shinpokerednote: gbcnote: modified to match yellow
+wPartyHPBarAttributes::	
+	ds 20
 
 NEXTU
 	ds 29
@@ -2035,7 +2045,19 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	;ds 56
+;;;;;; shinpokerednote: gbcnote: GBC stuff from pokemon yellow
+
+wGBCBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; 8 bytes
+wGBCPal:: ds PAL_SIZE ; 8 bytes
+wLastBGP::db
+wLastOBP0::db
+wLastOBP1::db 
+wBGPPalsBuffer:: ds NUM_ACTIVE_PALS * PAL_SIZE ; 32 bytes
+
+;;;;;;
+
+	ds 5 ; unused save file 4 bytes
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

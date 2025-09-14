@@ -7,6 +7,9 @@ FuchsiaMart_TextPointers:
 	dw_const FuchsiaMartMiddleAgedManText, TEXT_FUCHSIAMART_MIDDLE_AGED_MAN
 	dw_const FuchsiaMartCooltrainerFText,  TEXT_FUCHSIAMART_COOLTRAINER_F
 
+FuchsiaMartClerkText:
+	script_mart ULTRA_BALL, GREAT_BALL, SUPER_POTION, REVIVE, FULL_HEAL, SUPER_REPEL
+
 FuchsiaMartMiddleAgedManText:
 	text_far _FuchsiaMartMiddleAgedManText
 	text_end

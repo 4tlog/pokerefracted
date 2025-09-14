@@ -7,6 +7,9 @@ LavenderMart_TextPointers:
 	dw_const LavenderMartBaldingGuyText,   TEXT_LAVENDERMART_BALDING_GUY
 	dw_const LavenderMartCooltrainerMText, TEXT_LAVENDERMART_COOLTRAINER_M
 
+LavenderMartClerkText:
+	script_mart GREAT_BALL, SUPER_POTION, REVIVE, ESCAPE_ROPE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, PARLYZ_HEAL
+
 LavenderMartBaldingGuyText:
 	text_far _LavenderMartBaldingGuyText
 	text_end

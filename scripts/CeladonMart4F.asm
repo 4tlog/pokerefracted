@@ -8,6 +8,9 @@ CeladonMart4F_TextPointers:
 	dw_const CeladonMart4FYoungsterText,        TEXT_CELADONMART4F_YOUNGSTER
 	dw_const CeladonMart4FCurrentFloorSignText, TEXT_CELADONMART4F_CURRENT_FLOOR_SIGN
 
+CeladonMart4FClerkText:
+	script_mart POKE_DOLL, FIRE_STONE, THUNDER_STONE, WATER_STONE, LEAF_STONE
+
 CeladonMart4FSuperNerdText:
 	text_far _CeladonMart4FSuperNerdText
 	text_end

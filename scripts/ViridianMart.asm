@@ -90,6 +90,9 @@ ViridianMartClerkParcelQuestText:
 	sound_get_key_item
 	text_end
 
+ViridianMartClerkText:
+	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
+
 ViridianMartYoungsterText:
 	text_far _ViridianMartYoungsterText
 	text_end

@@ -249,6 +249,7 @@ PlayAnimation:
 	push af
 	ld a, [wAnimPalette]
 	ldh [rOBP0], a
+	call UpdateGBCPal_OBP0 ; shinpokerednote: gbcnote: color support from yellow
 	call LoadMoveAnimationTiles
 	vc_hook Reduce_move_anim_flashing_Mega_Punch_Self_Destruct_Explosion
 	call LoadSubanimation
@@ -258,6 +259,7 @@ PlayAnimation:
 	pop af
 	vc_hook_red Stop_reducing_move_anim_flashing_Blizzard
 	ldh [rOBP0], a
+	call UpdateGBCPal_OBP0 ; shinpokerednote: gbcnote: color support from yellow
 .nextAnimationCommand
 	vc_hook_red Stop_reducing_move_anim_flashing_Hyper_Beam
 	vc_hook_blue Stop_reducing_move_anim_flashing_Bubblebeam_Hyper_Beam_Blizzard
@@ -567,6 +569,8 @@ SetAnimationPalette:
 	ldh [rOBP0], a
 	ld a, $6c
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP0   ; jolnote, .next code not in vort or jo code
+	call UpdateGBCPal_OBP1   ; jolnote, .next code not in vort or jo code
 	ret
 .notSGB
 	ld a, $e4
@@ -575,6 +579,8 @@ SetAnimationPalette:
 	ldh [rOBP0], a
 	ld a, $6c
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 	ret
 
 PlaySubanimation:
@@ -690,6 +696,7 @@ DoBallTossSpecialEffects:
 	ldh a, [rOBP0]
 	xor %00111100 ; complement colors 1 and 2
 	ldh [rOBP0], a
+	call UpdateGBCPal_OBP0
 .skipFlashingEffect
 	ld a, [wSubAnimCounter]
 	cp 11 ; is it the beginning of the subanimation?
@@ -979,6 +986,7 @@ AnimationFlashScreenLong:
 	cp 1
 	jr z, .endOfPalettes
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP ; shinpokerednote: gbcnote: gbc color facilitation
 	call FlashScreenLongDelay
 	jr .innerLoop
 .endOfPalettes
@@ -1042,14 +1050,17 @@ AnimationFlashScreen:
 	push af ; save initial palette
 	ld a, %00011011 ; 0, 1, 2, 3 (inverted colors)
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP ; shinpokerednote: gbcnote: gbc color facilitation
 	ld c, 2
 	call DelayFrames
 	xor a ; white out background
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP ; shinpokerednote: gbcnote: gbc color facilitation
 	ld c, 2
 	call DelayFrames
 	pop af
 	ldh [rBGP], a ; restore initial palette
+	call UpdateGBCPal_BGP ; shinpokerednote: gbcnote: gbc color facilitation
 	ret
 
 AnimationDarkScreenPalette:
@@ -1095,6 +1106,7 @@ SetAnimationBGPalette:
 	ld a, c
 .next
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP ; shinpokerednote: gbcnote: gbc color facilitation
 	ret
 
 	ld b, $5
@@ -1259,6 +1271,16 @@ _AnimationSlideMonUp:
 	ret
 
 ShakeEnemyHUD_WritePlayerMonPicOAM:
+	;;;;; PureRGBnote: FIXED: shows the correct palette for the player sprite when shaking enemy hud on GBC
+	ldh a, [hGBC]
+	and a
+	jr z, .notGBC
+	ld a, [wBattleMonSpecies]
+	ld [wCurPartySpecies], a
+	lb de, CONVERT_OBP0, 1
+	callfar TransferMonPal
+.notGBC
+;;;;;
 ; Writes the OAM entries for a copy of the player mon's pic in OAM.
 ; The top 5 rows are reproduced in OAM, although only 2 are actually needed.
 	ld a, $10
@@ -2313,12 +2335,14 @@ AnimationLeavesFalling:
 	push af
 	ld a, [wAnimPalette]
 	ldh [rOBP0], a
+	call UpdateGBCPal_OBP0 ; shinpokerednote: gbcnote: color support from yellow
 	ld d, $37 ; leaf tile
 	ld a, 3 ; number of leaves
 	ld [wNumFallingObjects], a
 	call AnimationFallingObjects
 	pop af
 	ldh [rOBP0], a
+	call UpdateGBCPal_OBP0 ; shinpokerednote: gbcnote: color support from yellow
 	ret
 
 AnimationPetalsFalling:

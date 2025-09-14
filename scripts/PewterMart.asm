@@ -10,6 +10,9 @@ PewterMart_TextPointers:
 	dw_const PewterMartYoungsterText, TEXT_PEWTERMART_YOUNGSTER
 	dw_const PewterMartSuperNerdText, TEXT_PEWTERMART_SUPER_NERD
 
+PewterMartClerkText:
+	script_mart POKE_BALL, POTION, ESCAPE_ROPE, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
+
 PewterMartYoungsterText:
 	text_asm
 	ld hl, .Text

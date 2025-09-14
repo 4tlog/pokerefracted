@@ -43,7 +43,8 @@ Init::
 	call ClearVram
 
 	ld hl, STARTOF(HRAM)
-	ld bc, SIZEOF(HRAM)
+	;ld bc, SIZEOF(HRAM)
+	ld bc, SIZEOF(HRAM) - 1 ; shinpokerednote: gbcnote: the -1 means don't clear hGBC
 	call FillMemory
 
 	call ClearSprites

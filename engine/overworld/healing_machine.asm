@@ -12,6 +12,7 @@ AnimateHealingMachine:
 	push af
 	ld a, $e0
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP1
 	ld hl, wShadowOAMSprite33
 	ld de, PokeCenterOAMData
 	call CopyHealingMachineOAM
@@ -57,6 +58,7 @@ AnimateHealingMachine:
 	call DelayFrames
 	pop af
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP1 ; shinpokerednote: gbcnote: gbc color code from yellow 
 	pop hl
 	pop af
 	ld [hl], a
@@ -83,6 +85,7 @@ FlashSprite8Times:
 	ldh a, [rOBP1]
 	xor d
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP1 ; shinpokerednote: gbcnote: gbc color code from yellow 
 	ld c, 10
 	call DelayFrames
 	dec b

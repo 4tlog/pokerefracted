@@ -7,6 +7,9 @@ CinnabarMart_TextPointers:
 	dw_const CinnabarMartSilphWorkerFText, TEXT_CINNABARMART_SILPH_WORKER_F
 	dw_const CinnabarMartScientistText,    TEXT_CINNABARMART_SCIENTIST
 
+CinnabarMartClerkText:
+	script_mart ULTRA_BALL, GREAT_BALL, HYPER_POTION, MAX_REPEL, ESCAPE_ROPE, FULL_HEAL, REVIVE
+
 CinnabarMartSilphWorkerFText:
 	text_far _CinnabarMartSilphWorkerFText
 	text_end

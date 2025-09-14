@@ -18,6 +18,7 @@ AnimCut:
 	ldh a, [rOBP1]
 	xor $64
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP1 ; shinpokerednote: gbcnote: gbc color code from yellow 
 	call DelayFrame
 	pop bc
 	dec c
@@ -68,6 +69,7 @@ AnimCutGrass_UpdateOAMEntries:
 	ldh a, [rOBP1]
 	xor $64
 	ldh [rOBP1], a
+	call UpdateGBCPal_OBP1 ; colour added
 	call DelayFrame
 	pop bc
 	dec c
