@@ -30,8 +30,8 @@ PokedexEntryPointers:
 	dw BlastoiseDexEntry
 	dw PinsirDexEntry
 	dw TangelaDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw PichuDexEntry
+	dw CleffaDexEntry
 	dw GrowlitheDexEntry
 	dw OnixDexEntry
 	dw FearowDexEntry
@@ -49,26 +49,26 @@ PokedexEntryPointers:
 	dw PsyduckDexEntry
 	dw DrowzeeDexEntry
 	dw GolemDexEntry
-	dw MissingNoDexEntry
+	dw IgglybuffDexEntry
 	dw MagmarDexEntry
-	dw MissingNoDexEntry
+	dw CrobatDexEntry
 	dw ElectabuzzDexEntry
 	dw MagnetonDexEntry
 	dw KoffingDexEntry
-	dw MissingNoDexEntry
+	dw BellossomDexEntry
 	dw MankeyDexEntry
 	dw SeelDexEntry
 	dw DiglettDexEntry
 	dw TaurosDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw AnnihilapeDexEntry
+	dw PolitoedDexEntry
+	dw SlowkingDexEntry
 	dw FarfetchdDexEntry
 	dw VenonatDexEntry
 	dw DragoniteDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw MagnezoneDexEntry
+	dw CrystalixDexEntry
+	dw TyrogueDexEntry
 	dw DoduoDexEntry
 	dw PoliwagDexEntry
 	dw JynxDexEntry
@@ -78,23 +78,23 @@ PokedexEntryPointers:
 	dw DittoDexEntry
 	dw MeowthDexEntry
 	dw KrabbyDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw HitmontopDexEntry
+	dw LickilickyDexEntry
+	dw RhyperiorDexEntry
 	dw VulpixDexEntry
 	dw NinetalesDexEntry
 	dw PikachuDexEntry
 	dw RaichuDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw HappinyDexEntry
+	dw BlisseyDexEntry
 	dw DratiniDexEntry
 	dw DragonairDexEntry
 	dw KabutoDexEntry
 	dw KabutopsDexEntry
 	dw HorseaDexEntry
 	dw SeadraDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw TangrowthDexEntry
+	dw KingdraDexEntry
 	dw SandshrewDexEntry
 	dw SandslashDexEntry
 	dw OmanyteDexEntry
@@ -114,38 +114,38 @@ PokedexEntryPointers:
 	dw WeedleDexEntry
 	dw KakunaDexEntry
 	dw BeedrillDexEntry
-	dw MissingNoDexEntry
+	dw SrmimeDexEntry
 	dw DodrioDexEntry
 	dw PrimeapeDexEntry
 	dw DugtrioDexEntry
 	dw VenomothDexEntry
 	dw DewgongDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw ScizorDexEntry
+	dw KleavorDexEntry
 	dw CaterpieDexEntry
 	dw MetapodDexEntry
 	dw ButterfreeDexEntry
 	dw MachampDexEntry
-	dw MissingNoDexEntry
+	dw SmoochumDexEntry
 	dw GolduckDexEntry
 	dw HypnoDexEntry
 	dw GolbatDexEntry
 	dw MewtwoDexEntry
 	dw SnorlaxDexEntry
 	dw MagikarpDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw ElekidDexEntry
+	dw ElectivireDexEntry
 	dw MukDexEntry
-	dw MissingNoDexEntry
+	dw MagbyDexEntry
 	dw KinglerDexEntry
 	dw CloysterDexEntry
-	dw MissingNoDexEntry
+	dw MagmortarDexEntry
 	dw ElectrodeDexEntry
 	dw ClefableDexEntry
 	dw WeezingDexEntry
 	dw PersianDexEntry
 	dw MarowakDexEntry
-	dw MissingNoDexEntry
+	dw EspeonDexEntry
 	dw HaunterDexEntry
 	dw AbraDexEntry
 	dw AlakazamDexEntry
@@ -155,13 +155,13 @@ PokedexEntryPointers:
 	dw BulbasaurDexEntry
 	dw VenusaurDexEntry
 	dw TentacruelDexEntry
-	dw MissingNoDexEntry
+	dw LeafeonDexEntry
 	dw GoldeenDexEntry
 	dw SeakingDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw GlaceonDexEntry
+	dw DrakeonDexEntry
+	dw MunchlaxDexEntry
+	dw MimikyuDexEntry
 	dw PonytaDexEntry
 	dw RapidashDexEntry
 	dw RattataDexEntry
@@ -171,16 +171,16 @@ PokedexEntryPointers:
 	dw GeodudeDexEntry
 	dw PorygonDexEntry
 	dw AerodactylDexEntry
-	dw MissingNoDexEntry
+	dw HonedgeDexEntry
 	dw MagnemiteDexEntry
-	dw MissingNoDexEntry
-	dw MissingNoDexEntry
+	dw DoubladeDexEntry
+	dw AegislashDexEntry
 	dw CharmanderDexEntry
 	dw SquirtleDexEntry
 	dw CharmeleonDexEntry
 	dw WartortleDexEntry
 	dw CharizardDexEntry
-	dw MissingNoDexEntry
+	dw GhCuboneDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
@@ -190,6 +190,51 @@ PokedexEntryPointers:
 	dw BellsproutDexEntry
 	dw WeepinbellDexEntry
 	dw VictreebelDexEntry
+	dw GhMarowakDexEntry
+	dw IceSandshrewDexEntry
+	dw IceSandslashDexEntry
+	dw IceVulpixDexEntry
+	dw IceNinetaleDexEntry
+	dw PsyPonytaDexEntry
+	dw PsyRapidashDexEntry
+	dw NarcticDexEntry
+	dw MVenusaurDexEntry
+	dw MCharizardXDexEntry
+	dw MCharizardYDexEntry
+	dw MBlastoiseDexEntry
+	dw MBeedrillDexEntry
+	dw MPidgeotDexEntry
+	dw MAlakazamDexEntry
+	dw MVictreebelDexEntry
+	dw MSlowbroDexEntry
+	dw MGengarDexEntry
+	dw MCrystalixDexEntry
+	dw MKangaskhanDexEntry
+	dw MScizorDexEntry
+	dw MPinsirDexEntry
+	dw MGyaradosDexEntry
+	dw MAerodactylDexEntry
+	dw MDragoniteDexEntry
+	dw MLaprasDexEntry
+	dw MSandslashDexEntry
+	dw MRaichuXDexEntry
+	dw MRaichuYDexEntry
+	dw MMachampDexEntry
+	dw KyogreDexEntry
+	dw GroudonDexEntry
+	dw ArceusDexEntry
+	dw RayquazaDexEntry
+	dw GiratinaDexEntry
+	dw MissignoDexEntry
+	dw GenesectDexEntry
+	dw ShayminDexEntry
+	dw MarshadowDexEntry
+	dw DiancieDexEntry
+	dw TornadusDexEntry
+	dw SirfetchdDexEntry
+	dw MimejrDexEntry
+	dw Porygon2DexEntry
+	dw PorygonZDexEntry
 	assert_table_length NUM_POKEMON_INDEXES
 
 ; string: species name
@@ -405,6 +450,13 @@ TangelaDexEntry:
 	db 3,3
 	dw 770
 	text_far _TangelaDexEntry
+	text_end
+
+PichuDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
 	text_end
 
 GrowlitheDexEntry:
@@ -1259,3 +1311,570 @@ MissingNoDexEntry:
 	db 10 ; 1.0 m
 	dw 100 ; 10.0 kg
 	db "コメント　さくせいちゅう@" ; コメント作成中 (Comment to be written)
+
+
+
+CleffaDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+IgglybuffDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+CrobatDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+BellossomDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+AnnihilapeDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+PolitoedDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+SlowkingDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MagnezoneDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+CrystalixDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+TyrogueDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+HitmontopDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+LickilickyDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+RhyperiorDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+HappinyDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+BlisseyDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+TangrowthDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+KingdraDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+SrmimeDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+ScizorDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+KleavorDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+SmoochumDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+ElekidDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+ElectivireDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MagbyDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MagmortarDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+EspeonDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+LeafeonDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+GlaceonDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+DrakeonDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MunchlaxDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MimikyuDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+HonedgeDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+DoubladeDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+AegislashDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+GhCuboneDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+
+GhMarowakDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+IceSandshrewDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+IceSandslashDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+IceVulpixDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+IceNinetaleDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+PsyPonytaDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+PsyRapidashDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+NarcticDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MVenusaurDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MCharizardXDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MCharizardYDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MBlastoiseDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MBeedrillDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MPidgeotDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MAlakazamDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MVictreebelDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MSlowbroDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MGengarDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MCrystalixDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MKangaskhanDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MScizorDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MPinsirDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MGyaradosDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MAerodactylDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MDragoniteDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MLaprasDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MSandslashDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MRaichuXDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MRaichuYDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MMachampDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+KyogreDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+GroudonDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+ArceusDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+RayquazaDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+GiratinaDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MissignoDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+GenesectDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+ShayminDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MarshadowDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+DiancieDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+TornadusDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+SirfetchdDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+MimejrDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+Porygon2DexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+PorygonZDexEntry:
+	db "A@"
+	db 1,1
+	dw 100
+	text_far _TestDexEntry
+	text_end
+
+
+
+

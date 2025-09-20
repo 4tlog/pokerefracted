@@ -1507,3 +1507,13 @@ _VictreebelDexEntry::
 	next "has ever returned"
 	next "from there"
 	dex
+
+_TestDexEntry::
+	text "test text go"
+	next "here for some"
+	next "pokemons!"
+
+	page "maybe a bit"
+	next "more text can"
+	next "go here!"
+	dex
