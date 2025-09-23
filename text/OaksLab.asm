@@ -38,9 +38,10 @@ _OaksLabYouWantSquirtleText::
 	done
 
 _OaksLabYouWantBulbasaurText::
-	text "So! You want the"
-	line "plant #MON,"
-	cont "BULBASAUR?"
+	text "So! You want"
+	line "@"
+	text_ram wNameBuffer
+	text "?"
 	done
 
 _OaksLabMonEnergeticText::
@@ -64,7 +65,7 @@ _OaksLabOak1WhichPokemonDoYouWantText::
 	text "OAK: Now, <PLAYER>,"
 	line "which #MON do"
 	cont "you want?"
-	done
+	prompt
 
 _OaksLabOak1YourPokemonCanFightText::
 	text "OAK: If a wild"
@@ -362,3 +363,8 @@ _OaksLabScientistText::
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."
 	done
+
+_OakSelectStarterScreenText::
+	text "What type of"
+	line "trainer are you?"
+	prompt

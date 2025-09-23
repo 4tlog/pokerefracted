@@ -737,6 +737,7 @@ OaksLab_TextPointers:
 	dw_const OaksLabGirlText,                     TEXT_OAKSLAB_GIRL
 	dw_const OaksLabScientistText,                TEXT_OAKSLAB_SCIENTIST1
 	dw_const OaksLabScientistText,                TEXT_OAKSLAB_SCIENTIST2
+	;dw_const OaksLabStarterPickText								TEXT_OAKSLAB_STARTER
 	dw_const OaksLabOakDontGoAwayYetText,         TEXT_OAKSLAB_OAK_DONT_GO_AWAY_YET
 	dw_const OaksLabRivalIllTakeThisOneText,      TEXT_OAKSLAB_RIVAL_ILL_TAKE_THIS_ONE
 	dw_const OaksLabRivalReceivedMonText,         TEXT_OAKSLAB_RIVAL_RECEIVED_MON
@@ -798,14 +799,35 @@ OaksLabRivalText:
 	text_far _OaksLabRivalMyPokemonLooksStrongerText
 	text_end
 
-OaksLabCharmanderPokeBallText:
+OaksLabStarterPickText:
 	text_asm
-	ld a, STARTER2
+	push af
+	ld a, EEVEE
 	ld [wRivalStarterTemp], a
 	ld a, OAKSLAB_SQUIRTLE_POKE_BALL
 	ld [wRivalStarterBallSpriteIndex], a
-	ld a, STARTER1
-	ld b, OAKSLAB_CHARMANDER_POKE_BALL
+	pop af
+	;ld a, STARTER1
+	;ld b, OAKSLAB_CHARMANDER_POKE_BALL
+	jr OaksLabSelectedPokeBallScript
+
+OaksLabCharmanderPokeBallText:
+	;text_asm
+	;ld a, STARTER2
+	;ld [wRivalStarterTemp], a
+	;ld a, OAKSLAB_SQUIRTLE_POKE_BALL
+	;ld [wRivalStarterBallSpriteIndex], a
+	;ld a, STARTER1
+	;ld b, OAKSLAB_CHARMANDER_POKE_BALL
+	;jr OaksLabSelectedPokeBallScript
+	;text_asm
+	push af
+	ld a, EEVEE
+	ld [wRivalStarterTemp], a
+	ld [wRivalStarterBallSpriteIndex], a
+	pop af
+	;ld a, STARTER0
+	;ld b, OAKSLAB_CHARMANDER_POKE_BALL
 	jr OaksLabSelectedPokeBallScript
 
 OaksLabSquirtlePokeBallText:
@@ -830,7 +852,7 @@ OaksLabBulbasaurPokeBallText:
 OaksLabSelectedPokeBallScript:
 	ld [wCurPartySpecies], a
 	ld [wPokedexNum], a
-	ld a, b
+	;ld a, b
 	ld [wSpriteIndex], a
 	CheckEvent EVENT_GOT_STARTER
 	jp nz, OaksLabLastMonScript
@@ -1000,6 +1022,9 @@ OaksLabOak1Text:
 	jr nz, .already_got_pokemon
 	ld hl, .WhichPokemonDoYouWantText
 	call PrintText
+	call selectStarterFromList			;should come out of here with starter loaded into a
+	;ld a, CLEFFA
+	jp OaksLabCharmanderPokeBallText
 	jr .done
 .already_got_pokemon
 	ld hl, .YourPokemonCanFightText
@@ -1234,3 +1259,5 @@ OaksLabScientistText:
 .Text:
 	text_far _OaksLabScientistText
 	text_end
+
+INCLUDE "engine/events/select_starter.asm"

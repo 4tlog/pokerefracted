@@ -232,7 +232,7 @@ MonsterNames::
 	dname "DIANCIE"				
 	dname "TORNADUS"			
 	dname "SIRFETCHD"			
-	dname "MIME.JR"				
+	dname "MIME JR."				
 	dname "PORYGON2"			
 	dname "PORYGONZ"			
 	assert_table_length NUM_POKEMON_INDEXES
