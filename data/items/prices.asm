@@ -31,22 +31,37 @@ ItemPrices::
 	bcd3 550   ; ESCAPE_ROPE
 	bcd3 350   ; REPEL
 	bcd3 0     ; OLD_AMBER
-	bcd3 2100  ; FIRE_STONE
-	bcd3 2100  ; THUNDER_STONE
-	bcd3 2100  ; WATER_STONE
+	;bcd3 2100  ; FIRE_STONE
+	;bcd3 2100  ; THUNDER_STONE
+	;bcd3 2100  ; WATER_STONE
 	bcd3 9800  ; HP_UP
 	bcd3 9800  ; PROTEIN
 	bcd3 9800  ; IRON
 	bcd3 9800  ; CARBOS
 	bcd3 9800  ; CALCIUM
 	bcd3 4800  ; RARE_CANDY
+	bcd3 0		 ; NORMAL_STONE
+	bcd3 0  	 ; FIRE_STONE
+	bcd3 0 		 ; WATER_STONE
+	bcd3 0		 ; THUNDER_STONE
+	bcd3 0		 ; LEAF_STONE
+	bcd3 0		 ; ICE_STONE	
+	bcd3 0		 ; FIGHT_STONE
+	bcd3 0		 ; POISN_STONE
+	bcd3 0		 ; GROUN_STONE
+	bcd3 0		 ; FLY_STONE	
+	bcd3 0		 ; PSYCH_STONE
+	bcd3 0		 ; BUG_STONE	
+	bcd3 0		 ; ROCK_STONE
+	bcd3 0		 ; GHOST_STONE
+	bcd3 0		 ; DRAG_STONE
 	bcd3 0     ; DOME_FOSSIL
 	bcd3 0     ; HELIX_FOSSIL
 	bcd3 0     ; SECRET_KEY
 	bcd3 0     ; ITEM_2C
 	bcd3 0     ; BIKE_VOUCHER
 	bcd3 950   ; X_ACCURACY
-	bcd3 2100  ; LEAF_STONE
+;bcd3 2100  ; LEAF_STONE
 	bcd3 0     ; CARD_KEY
 	bcd3 10000 ; NUGGET
 	bcd3 9800  ; ITEM_32

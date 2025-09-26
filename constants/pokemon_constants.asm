@@ -246,7 +246,10 @@
 DEF NUM_POKEMON_INDEXES EQU const_value - 1
 
 ; starters
-;StarterTable:
+DEF NUM_STARTERS EQU 15
+
+; UNUSED, starters defined in engine/events/select_starter.asm and home/starter_menu.asm
+const_def
 DEF STARTER0	EQU CLEFFA
 DEF STARTER1	EQU CHARMANDER
 DEF STARTER2	EQU SQUIRTLE

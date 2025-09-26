@@ -81,6 +81,14 @@ _VitaminNoEffectText::
 	line "effect."
 	prompt
 
+_StoneUsedText::
+	text_ram wNameBuffer
+	text " is now"
+	line "@"
+	text_ram wStringBuffer
+	text " type!"
+	prompt
+
 _ThrewBaitText::
 	text "<PLAYER> threw"
 	line "some BAIT."

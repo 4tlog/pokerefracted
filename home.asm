@@ -83,4 +83,3 @@ INCLUDE "home/predef.asm"
 INCLUDE "home/hidden_objects.asm"
 INCLUDE "home/predef_text.asm"
 INCLUDE "home/gbc_funcs.asm" ; shinpokerednote: gbcnote: added code from pokemon yellow for showing colors correctly on gbc
-;INCLUDE "home/starter_menu.asm"

@@ -12,7 +12,7 @@ selectStarterFromList::
 	ld [wTopMenuItemY], a
 	ld a, 1
 	ld [wTopMenuItemX], a
-  ld a, 14
+  ld a, NUM_STARTERS-1
   ld [wListCount], a
   ld a, 0
   ld [wListPointer], a
@@ -38,14 +38,15 @@ selectStarterFromList::
   
 .dontGo
 	ld hl, OaksLabOakDontGoAwayYetText2
-	jp PrintText
+	call PrintText
+  ld a, NUM_STARTERS
   ret
 
 OakSelectStarterScreenText:
 	text_far _OakSelectStarterScreenText
 	text_end
 
-
+;To change starters, also ned to modify starter_menu.asm text strings
 StarterTable:
   db CLEFFA
   db CHARMANDER
@@ -62,40 +63,6 @@ StarterTable:
   db GEODUDE
   db HONEDGE
   db HORSEA
-
-;StartersText:
-	;db "CLEFFA@"
-	;db "CHARMANDER@"
-	;db "SQUIRTLE@"
-  ;db "PICHU@"
-  ;db "BULBASAUR@"
-  ;db "SEEL@"
-  ;db "MACHOP@"
-  ;db "ZUBAT@"
-  ;db "SANDSHREW@"
-  ;db "PIDGEY@"
-  ;db "MIME_JR.@"
-  ;db "CATERPIE@"
-  ;db "GEODUDE@"
-  ;db "HONEDGE@"
-  ;db "HORSEA@"
-;
-;StartersTypeText:
-	;db "NORMAL@"
-	;db "FIRE@"
-	;db "WATER@"
-  ;db "ELECTRIC@"
-  ;db "GRASS@"
-  ;db "ICE@"
-  ;db "FIGHTING@"
-  ;db "POISON@"
-  ;db "GROUND@"
-  ;db "FLYING@"
-  ;db "PSYCHIC@"
-  ;db "BUG@"
-  ;db "ROCK@"
-  ;db "GHOST@"
-  ;db "DRAGON@"
 
 OaksLabOakDontGoAwayYetText2:
   text_far _OaksLabOakDontGoAwayYetText

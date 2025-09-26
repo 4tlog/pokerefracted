@@ -48,22 +48,37 @@ ItemUsePtrTable:
 	dw ItemUseEscapeRope ; ESCAPE_ROPE
 	dw ItemUseRepel      ; REPEL
 	dw UnusableItem      ; OLD_AMBER
-	dw ItemUseEvoStone   ; FIRE_STONE
-	dw ItemUseEvoStone   ; THUNDER_STONE
-	dw ItemUseEvoStone   ; WATER_STONE
+	;dw ItemUseEvoStone   ; FIRE_STONE
+	;dw ItemUseEvoStone   ; THUNDER_STONE
+	;dw ItemUseEvoStone   ; WATER_STONE
 	dw ItemUseVitamin    ; HP_UP
 	dw ItemUseVitamin    ; PROTEIN
 	dw ItemUseVitamin    ; IRON
 	dw ItemUseVitamin    ; CARBOS
 	dw ItemUseVitamin    ; CALCIUM
 	dw ItemUseVitamin    ; RARE_CANDY
+	dw ItemUseVitamin		 ; NORMAL_STONE
+	dw ItemUseVitamin    ; FIRE_STONE
+	dw ItemUseVitamin    ; WATER_STONE
+	dw ItemUseVitamin		 ; THUNDER_STONE
+	dw ItemUseVitamin		 ; LEAF_STONE
+	dw ItemUseVitamin		 ; ICE_STONE	
+	dw ItemUseVitamin		 ; FIGHT_STONE
+	dw ItemUseVitamin		 ; POISN_STONE
+	dw ItemUseVitamin		 ; GROUN_STONE
+	dw ItemUseVitamin		 ; FLY_STONE	
+	dw ItemUseVitamin		 ; PSYCH_STONE
+	dw ItemUseVitamin		 ; BUG_STONE	
+	dw ItemUseVitamin		 ; ROCK_STONE
+	dw ItemUseVitamin		 ; GHOST_STONE
+	dw ItemUseVitamin		 ; DRAG_STONE
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
 	dw UnusableItem      ; ITEM_2C
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
-	dw ItemUseEvoStone   ; LEAF_STONE
+	;dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ITEM_32
@@ -1270,6 +1285,8 @@ ItemUseMedicine:
 	ld a, [wCurItem]
 	cp RARE_CANDY
 	jp z, .useRareCandy
+	cp NORMAL_STONE
+	jp nc, .useStone
 	push hl
 	sub HP_UP
 	add a
@@ -1416,6 +1433,106 @@ ItemUseMedicine:
 	pop af
 	ld [wWhichPokemon], a
 	jp RemoveUsedItem
+.useStone
+	push hl
+	ld bc, wPartyMon1Type2 - wPartyMon1
+	add hl, bc ; hl now points to type2
+	ld b, [hl]
+	cp FIRE_STONE
+	jr z, .fireStone
+	cp THUNDER_STONE
+	jr z, .thunderStone
+	cp WATER_STONE
+	jr z, .waterStone
+	cp LEAF_STONE
+	jr z, .grassStone
+	cp ICE_STONE
+	jr z, .iceStone
+	cp FIGHT_STONE
+	jr z, .fightStone
+	cp POISON_STONE
+	jr z, .poisonStone
+	cp GROUND_STONE
+	jr z, .groundStone
+	cp FLYING_STONE
+	jr z, .flyingStone
+	cp PSYCHIC_STONE
+	jr z, .psychicStone
+	cp BUG_STONE
+	jr z, .bugStone
+	cp ROCK_STONE
+	jr z, .rockStone
+	cp GHOST_STONE
+	jr z, .ghostStone
+	cp DRAGON_STONE
+	jr z, .dragonStone
+	cp NORMAL_STONE
+	jr z, .normalStone
+.fireStone
+	ld a, FIRE
+	jr .applyStone
+.thunderStone
+	ld a, THUNDER
+	jr .applyStone
+.waterStone
+	ld a, WATER
+	jr .applyStone
+.grassStone
+	ld a, GRASS
+	jr .applyStone
+.iceStone
+	ld a, ICE
+	jr .applyStone
+.fightStone
+	ld a, FIGHTING
+	jr .applyStone
+.poisonStone
+	ld a, POISON
+	jr .applyStone
+.groundStone
+	ld a, GROUND
+	jr .applyStone
+.flyingStone
+	ld a, FLYING
+	jr .applyStone
+.psychicStone
+	ld a, PSYCHIC_TYPE
+	jr .applyStone
+.bugStone
+	ld a, BUG
+	jr .applyStone
+.rockStone
+	ld a, ROCK
+	jr .applyStone
+.ghostStone
+	ld a, GHOST
+	jr .applyStone
+.dragonStone
+	ld a, DRAGON
+	jr .applyStone
+.normalStone
+	ld a, NORMAL
+	jr .applyStone
+.applyStone
+	cp b
+	jp z, .vitaminNoEffect
+	ld [hl], a
+  add a
+	ld hl, TypeNames
+	ld e, a
+	ld d, $0
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	call CopyToStringBuffer
+	ld a, SFX_HEAL_AILMENT
+	call PlaySound
+	ld hl, StoneUsedText
+	call PrintText
+	pop hl
+	jp RemoveUsedItem
+
 
 VitaminStatRoseText:
 	text_far _VitaminStatRoseText
@@ -1424,6 +1541,11 @@ VitaminStatRoseText:
 VitaminNoEffectText:
 	text_far _VitaminNoEffectText
 	text_end
+
+StoneUsedText:
+	text_far _StoneUsedText
+	text_end
+
 
 INCLUDE "data/battle/stat_names.asm"
 

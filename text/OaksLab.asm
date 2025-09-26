@@ -25,24 +25,13 @@ _OaksLabThoseArePokeBallsText::
 	cont "contain #MON!"
 	done
 
-_OaksLabYouWantCharmanderText::
-	text "So! You want the"
-	line "fire #MON,"
-	cont "CHARMANDER?"
-	done
-
-_OaksLabYouWantSquirtleText::
-	text "So! You want the"
-	line "water #MON,"
-	cont "SQUIRTLE?"
-	done
-
-_OaksLabYouWantBulbasaurText::
+_OaksLabYouWantStarterText::
 	text "So! You want"
 	line "@"
 	text_ram wNameBuffer
 	text "?"
 	done
+
 
 _OaksLabMonEnergeticText::
 	text "This #MON is"
@@ -201,22 +190,24 @@ _OaksLabOakChooseMonText::
 
 	para "Here, <PLAYER>!"
 
-	para "There are 3"
-	line "#MON here!"
-
-	para "Haha!"
-
-	para "They are inside"
-	line "the # BALLs."
+	para "What sort of"
+	line "#MON trainer"
+	cont "do you want"
+	cont "to be!?"
 
 	para "When I was young,"
 	line "I was a serious"
 	cont "#MON trainer!"
 
-	para "In my old age, I"
-	line "have only 3 left,"
-	cont "but you can have"
-	cont "one! Choose!"
+	para "I have a #MON"
+	line "for each type"
+	cont "and I'll let you"
+	cont "choose one!"
+
+	para "Talk to me again"
+	line "when you're ready"
+	cont "to pick what type"
+	cont "trainer to be!"
 	done
 
 _OaksLabRivalWhatAboutMeText::
@@ -227,8 +218,9 @@ _OaksLabRivalWhatAboutMeText::
 
 _OaksLabOakBePatientText::
 	text "OAK: Be patient!"
-	line "<RIVAL>, you can"
-	cont "have one too!"
+	line "<RIVAL>, I have"
+	cont "a surprise for"
+	cont "you there!"
 	done
 
 _OaksLabOakDontGoAwayYetText::
@@ -237,13 +229,13 @@ _OaksLabOakDontGoAwayYetText::
 	done
 
 _OaksLabRivalIllTakeThisOneText::
-	text "<RIVAL>: I'll take"
-	line "this one, then!"
+	text "<RIVAL>: This"
+	line "one gramps?"
 	done
 
 _OaksLabRivalReceivedMonText::
 	text "<RIVAL> received"
-	line "a @"
+	line "an @"
 	text_ram wNameBuffer
 	text "!@"
 	text_end
@@ -261,8 +253,8 @@ _OaksLabRivalIllTakeYouOnText::
 _OaksLabRivalIPickedTheWrongPokemonText::
 	text "WHAT?"
 	line "Unbelievable!"
-	cont "I picked the"
-	cont "wrong #MON!"
+	cont "I'll get you'"
+	cont "next time!"
 	prompt
 
 _OaksLabRivalAmIGreatOrWhatText::
