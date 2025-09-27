@@ -73,6 +73,7 @@ INCLUDE "engine/events/hidden_objects/book_or_sculpture.asm"
 INCLUDE "engine/events/hidden_objects/elevator.asm"
 INCLUDE "engine/events/hidden_objects/town_map.asm"
 INCLUDE "engine/events/hidden_objects/pokemon_stuff.asm"
+INCLUDE "engine/battle/print_type.asm"
 
 
 SECTION "Font Graphics", ROMX
@@ -146,7 +147,7 @@ INCLUDE "engine/pokemon/bills_pc.asm"
 
 SECTION "Battle Engine 3", ROMX
 
-INCLUDE "engine/battle/print_type.asm"
+;INCLUDE "engine/battle/print_type.asm"
 INCLUDE "engine/battle/save_trainer_name.asm"
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 

@@ -3,14 +3,17 @@
 PrintMonType:
 	call GetPredefRegisters
 	push hl
-	call GetMonHeader
-	pop hl
-	push hl
-	ld a, [wMonHType1]
+	;call GetMonHeader
+	;pop hl
+	;push hl
+	;ld a, [wMonHType1]
+	ld a, [wLoadedMonType1]
 	call PrintType
-	ld a, [wMonHType1]
+	;ld a, [wMonHType1]
+	ld a, [wLoadedMonType1]
 	ld b, a
-	ld a, [wMonHType2]
+	;ld a, [wMonHType2]
+	ld a, [wLoadedMonType2]
 	cp b
 	pop hl
 	jr z, EraseType2Text

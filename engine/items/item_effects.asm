@@ -116,6 +116,9 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; ELIXER
 	dw ItemUsePPRestore  ; MAX_ELIXER
 
+INCLUDE "data/types/elements.asm"
+
+
 ItemUseBall:
 
 ; Balls can't be used out of battle.
@@ -1437,86 +1440,24 @@ ItemUseMedicine:
 	push hl
 	ld bc, wPartyMon1Type2 - wPartyMon1
 	add hl, bc ; hl now points to type2
+	push hl
 	ld b, [hl]
-	cp FIRE_STONE
-	jr z, .fireStone
-	cp THUNDER_STONE
-	jr z, .thunderStone
-	cp WATER_STONE
-	jr z, .waterStone
-	cp LEAF_STONE
-	jr z, .grassStone
-	cp ICE_STONE
-	jr z, .iceStone
-	cp FIGHT_STONE
-	jr z, .fightStone
-	cp POISON_STONE
-	jr z, .poisonStone
-	cp GROUND_STONE
-	jr z, .groundStone
-	cp FLYING_STONE
-	jr z, .flyingStone
-	cp PSYCHIC_STONE
-	jr z, .psychicStone
-	cp BUG_STONE
-	jr z, .bugStone
-	cp ROCK_STONE
-	jr z, .rockStone
-	cp GHOST_STONE
-	jr z, .ghostStone
-	cp DRAGON_STONE
-	jr z, .dragonStone
-	cp NORMAL_STONE
-	jr z, .normalStone
-.fireStone
-	ld a, FIRE
-	jr .applyStone
-.thunderStone
-	ld a, THUNDER
-	jr .applyStone
-.waterStone
-	ld a, WATER
-	jr .applyStone
-.grassStone
-	ld a, GRASS
-	jr .applyStone
-.iceStone
-	ld a, ICE
-	jr .applyStone
-.fightStone
-	ld a, FIGHTING
-	jr .applyStone
-.poisonStone
-	ld a, POISON
-	jr .applyStone
-.groundStone
-	ld a, GROUND
-	jr .applyStone
-.flyingStone
-	ld a, FLYING
-	jr .applyStone
-.psychicStone
-	ld a, PSYCHIC_TYPE
-	jr .applyStone
-.bugStone
-	ld a, BUG
-	jr .applyStone
-.rockStone
-	ld a, ROCK
-	jr .applyStone
-.ghostStone
-	ld a, GHOST
-	jr .applyStone
-.dragonStone
-	ld a, DRAGON
-	jr .applyStone
-.normalStone
-	ld a, NORMAL
-	jr .applyStone
-.applyStone
-	cp b
+	
+	sub NORMAL_STONE ; a is now a value between 0 and 14 (to use as an index to ElementTable)
+
+	cp 15 ; bad programming, magic number, 1 more than type indexes, so not a stone
+	jp nc, .vitaminNoEffect
+
+	; Use A to index ElementTable
+  ld e, a
+  ld d, 0
+  ld hl, ElementTable
+  add hl, de
+  ld a, [hl]                ; A = target type from table
+	cp b 	; make sure pokemon isnt already that type
 	jp z, .vitaminNoEffect
-	ld [hl], a
+	pop hl
+	ld [hl], a ; Update the type here
   add a
 	ld hl, TypeNames
 	ld e, a
