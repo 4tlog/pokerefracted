@@ -30,13 +30,19 @@ SetPal_Battle:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	ld a, [wBattleMonType2]
+	ld [wTypeBuffer], a
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
 	call DeterminePaletteID
 	ld b, a
+	ld a, [wEnemyMonType2]
+	ld [wTypeBuffer], a
 	ld a, [wEnemyBattleStatus3]
 	ld hl, wEnemyMonSpecies2
+	push bc
 	call DeterminePaletteID
+	pop bc
 	ld c, a
 	ld hl, wPalPacket + 1
 	ld a, [wPlayerHPBarColor]
@@ -69,6 +75,8 @@ SetPal_StatusScreen:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	ld a, [wLoadedMonType2]
+	ld [wTypeBuffer], a
 	ld a, [wCurPartySpecies]
 	cp NUM_POKEMON_INDEXES + 1
 	jr c, .pokemon
@@ -287,7 +295,30 @@ DeterminePaletteIDOutOfBattle:
 .skipDexNumConversion
 	ld e, a
 	ld d, 0
-	ld hl, MonsterPalettes ; not just for Pokemon, Trainers use it too
+	and a					; mon index 0 (missingno)
+	jr z, .invalidTypeOrDefault 
+	ld a, [wTypeBuffer]
+	ld hl, TypeToIndexTable
+  ld c, a
+  ld b, 0
+  add hl, bc             ; HL points to table entry
+  ld a, [hl]             ; A now contains 0–14 index, or $FF if invalid
+	cp 15
+  jr nc, .invalidTypeOrDefault				; if invalid palette index, then load default palette (normal type)
+	add a
+	ld c, a
+  ld b, 0
+  ld hl, PaletteTablePointers
+  add hl, bc
+  ld a, [hli]
+	;ld c, a
+	ld b, [hl]
+	ld h, b
+	ld l, a ;c
+	jr .loadPokemon
+.invalidTypeOrDefault
+	ld hl, MonsterPalettes
+.loadPokemon
 	add hl, de
 	ld a, [hl]
 	ret
@@ -1035,6 +1066,24 @@ TransferMonPal:
 	pop af
 	jp TransferCurBGPData
 .isMon	
+
+	ld [wCurSpecies], a
+	push af
+	push bc
+	push de
+	push hl
+
+	;Type needs to be saved before DeterminePaletteIDOutOfBattle is called
+	call GetMonHeader 
+	ld a, [wMonHType2]
+	ld [wTypeBuffer], a
+
+	pop hl
+	pop de
+	pop bc
+	pop af
+
+
 	call DeterminePaletteIDOutOfBattle
 	jr .back
 
@@ -1047,3 +1096,5 @@ INCLUDE "data/sgb/sgb_palettes.asm"
 INCLUDE "data/gbc/gbc_palettes.asm"
 
 INCLUDE "data/sgb/sgb_border.asm"
+
+INCLUDE "data/pokemon/palette_table.asm"

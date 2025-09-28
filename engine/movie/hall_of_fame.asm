@@ -51,6 +51,11 @@ AnimateHallOfFame:
 	ld hl, wPartyMon1Level
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
+	ld a, [wPartyMon1Type1]
+	ld [wLoadedMonType1], a ; needed for PrintMon later?
+	ld a, [wPartyMon1Type2]   ;sets type buffer, so second type can be saved in Hof, and also sets palette for display
+	ld [wLoadedMonType2], a ; needed for PrintMon later?
+	ld [wTypeBuffer], a
 	ld a, [hl]
 	ld [wHoFMonLevel], a
 	call HoFShowMonOrPlayer
@@ -174,7 +179,7 @@ HoFDisplayMonInfo:
 	ld a, [wHoFMonSpecies]
 	ld [wCurSpecies], a
 	hlcoord 3, 9
-	predef PrintMonType
+	predef PrintMonType ; might have an issue here if no loadedmon with type?
 	ld a, [wHoFMonSpecies]
 	jp PlayCry
 
@@ -273,6 +278,8 @@ HoFRecordMonInfo:
 	ld a, [wHoFMonSpecies]
 	ld [hli], a
 	ld a, [wHoFMonLevel]
+	ld [hli], a
+	ld a, [wTypeBuffer]
 	ld [hli], a
 	ld e, l
 	ld d, h

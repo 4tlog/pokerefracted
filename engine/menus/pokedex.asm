@@ -406,6 +406,24 @@ ShowPokedexDataInternal:
 	ld a, [wPokedexNum]
 	ld [wCurPartySpecies], a
 	push af
+
+	ld [wCurSpecies], a
+	
+	push af
+	push bc
+	push de
+	push hl
+
+	;Type needs to be saved before RunPaletteCommand is called -> SetPal_Pokedex
+	call GetMonHeader 
+	ld a, [wMonHType2]
+	ld [wTypeBuffer], a
+
+	pop hl
+	pop de
+	pop bc
+	pop af
+
 	ld b, SET_PAL_POKEDEX
 	call RunPaletteCommand
 	pop af

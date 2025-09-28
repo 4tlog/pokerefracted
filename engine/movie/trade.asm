@@ -366,6 +366,8 @@ Trade_ShowEnemyMon:
 	call Trade_CopyTileMapToVRAM
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
+	ld a, [wEnemyTypeBuffer]
+	ld [wTypeBuffer], a
 	ld a, [wTradedEnemyMonSpecies]
 	call Trade_LoadMonSprite
 	ld a, TRADE_BALL_POOF_ANIM

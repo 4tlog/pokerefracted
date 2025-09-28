@@ -118,6 +118,8 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
 .doEvolution
 	ld [wCurEnemyLevel], a
+	ld a, [wLoadedMonType2]
+	ld [wTypeBuffer], a
 	ld a, 1
 	ld [wEvolutionOccurred], a
 	push hl

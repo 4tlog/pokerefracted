@@ -2058,7 +2058,9 @@ wBGPPalsBuffer:: ds NUM_ACTIVE_PALS * PAL_SIZE ; 32 bytes
 
 ;;;;;;
 
-	ds 5 ; unused save file 4 bytes
+	ds 3 ; unused save file 4 bytes
+wTypeBuffer:: db
+wEnemyTypeBuffer:: db
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

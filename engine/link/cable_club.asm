@@ -762,6 +762,8 @@ TradeCenter_Trade:
 	ld bc, NAME_LENGTH
 	call CopyData
 	ld hl, wPartyMon1Species
+	ld a, [wPartyMon1Type2]
+	ld [wTypeBuffer], a
 	ld a, [wTradingWhichPlayerMon]
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
@@ -778,6 +780,8 @@ TradeCenter_Trade:
 	ld bc, NAME_LENGTH
 	call CopyData
 	ld hl, wEnemyMons
+	ld a, [wEnemyMon1Type2]
+	ld [wEnemyTypeBuffer], a
 	ld a, [wTradingWhichEnemyMon]
 	ld bc, wEnemyMon2 - wEnemyMon1
 	call AddNTimes
