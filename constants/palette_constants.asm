@@ -60,4 +60,8 @@ DEF SET_PAL_DEFAULT EQU $ff
 	const PAL_BADGE     ; $22
 	const PAL_CAVE      ; $23
 	const PAL_GAMEFREAK ; $24
+	const PAL_BLUEICON	; $25
+	const PAL_PURPICON	; $26
+	const PAL_BROWNICON	; $27
+	const PAL_BUGICON		; $28
 DEF NUM_SGB_PALS EQU const_value

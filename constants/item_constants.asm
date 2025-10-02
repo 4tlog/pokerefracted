@@ -49,6 +49,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const IRON          ; $22
 	const CARBOS        ; $23
 	const CALCIUM       ; $24
+	const ZINC
 	const RARE_CANDY    ; $25
 	const NORMAL_STONE	;	$26
 	const FIRE_STONE    ; $27
@@ -68,7 +69,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const DOME_FOSSIL   ; $35
 	const HELIX_FOSSIL  ; $36
 	const SECRET_KEY    ; $37
-	const ITEM_2C       ; $38 ; unused
+	;const ITEM_2C       ; $38 ; unused
 	const BIKE_VOUCHER  ; $39
 	const X_ACCURACY    ; $3A
 	;const LEAF_STONE    ; $3B
@@ -93,6 +94,7 @@ DEF SAFARI_ROCK EQU CASCADEBADGE ; overload
 	const X_DEFEND      ; $4D
 	const X_SPEED       ; $4E
 	const X_SPECIAL     ; $4F
+	const X_SP_DEF
 	const COIN_CASE     ; $50
 	const OAKS_PARCEL   ; $51
 	const ITEMFINDER    ; $52

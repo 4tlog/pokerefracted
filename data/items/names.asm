@@ -39,6 +39,7 @@ ItemNames::
 	li "IRON"
 	li "CARBOS"
 	li "CALCIUM"
+	li "ZINC"
 	li "RARE CANDY"
 	li "NORMALSTONE"
 	li "FIRE STONE"
@@ -58,7 +59,7 @@ ItemNames::
 	li "DOME FOSSIL"
 	li "HELIX FOSSIL"
 	li "SECRET KEY"
-	li "?????" ; ITEM_2C
+	;li "?????" ; ITEM_2C
 	li "BIKE VOUCHER"
 	li "X ACCURACY"
 	;li "LEAF STONE"
@@ -82,7 +83,8 @@ ItemNames::
 	li "X ATTACK"
 	li "X DEFEND"
 	li "X SPEED"
-	li "X SPECIAL"
+	li "X SP. ATK"
+	li "X SP. DEF"
 	li "COIN CASE"
 	li "OAK's PARCEL"
 	li "ITEMFINDER"

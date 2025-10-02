@@ -18,6 +18,7 @@
 	const DEFENSE_UP1_EFFECT         ; $0B
 	const SPEED_UP1_EFFECT           ; $0C
 	const SPECIAL_UP1_EFFECT         ; $0D
+	const SPCLDEF_UP1_EFFECT
 	const ACCURACY_UP1_EFFECT        ; $0E
 	const EVASION_UP1_EFFECT         ; $0F
 	const PAY_DAY_EFFECT             ; $10
@@ -26,6 +27,7 @@
 	const DEFENSE_DOWN1_EFFECT       ; $13
 	const SPEED_DOWN1_EFFECT         ; $14
 	const SPECIAL_DOWN1_EFFECT       ; $15
+	const SPCLDEF_DOWN1_EFFECT
 	const ACCURACY_DOWN1_EFFECT      ; $16
 	const EVASION_DOWN1_EFFECT       ; $17
 	const CONVERSION_EFFECT          ; $18
@@ -34,7 +36,7 @@
 	const THRASH_PETAL_DANCE_EFFECT  ; $1B
 	const SWITCH_AND_TELEPORT_EFFECT ; $1C
 	const TWO_TO_FIVE_ATTACKS_EFFECT ; $1D
-	const EFFECT_1E                  ; $1E unused
+	const EFFECT_20                  ; $1E unused
 	const FLINCH_SIDE_EFFECT1        ; $1F
 	const SLEEP_EFFECT               ; $20
 	const POISON_SIDE_EFFECT2        ; $21
@@ -58,6 +60,7 @@
 	const DEFENSE_UP2_EFFECT         ; $33
 	const SPEED_UP2_EFFECT           ; $34
 	const SPECIAL_UP2_EFFECT         ; $35
+	const SPCLDEF_UP2_EFFECT
 	const ACCURACY_UP2_EFFECT        ; $36
 	const EVASION_UP2_EFFECT         ; $37
 	const HEAL_EFFECT                ; $38 Recover, Softboiled, Rest
@@ -66,6 +69,7 @@
 	const DEFENSE_DOWN2_EFFECT       ; $3B
 	const SPEED_DOWN2_EFFECT         ; $3C
 	const SPECIAL_DOWN2_EFFECT       ; $3D
+	const SPCLDEF_DOWN2_EFFECT
 	const ACCURACY_DOWN2_EFFECT      ; $3E
 	const EVASION_DOWN2_EFFECT       ; $3F
 	const LIGHT_SCREEN_EFFECT        ; $40
@@ -76,6 +80,7 @@
 	const DEFENSE_DOWN_SIDE_EFFECT   ; $45
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
+	const SPCLDEF_DOWN_SIDE_EFFECT
 	const_skip                       ; $48
 	const_skip                       ; $49
 	const_skip                       ; $4A
@@ -90,5 +95,5 @@
 	const METRONOME_EFFECT           ; $53
 	const LEECH_SEED_EFFECT          ; $54
 	const SPLASH_EFFECT              ; $55
-	const DISABLE_EFFECT             ; $56
+	const DISABLE_EFFECT             ; $5B
 DEF NUM_MOVE_EFFECTS EQU const_value - 1

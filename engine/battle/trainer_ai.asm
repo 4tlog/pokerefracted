@@ -704,6 +704,11 @@ AIUseXSpeed:
 AIUseXSpecial:
 	ld b, SPECIAL_UP1_EFFECT
 	ld a, X_SPECIAL
+	jr AIIncreaseStat
+
+AIUseXSpDef:
+	ld b, SPCLDEF_UP1_EFFECT
+	ld a, X_SP_DEF
 	; fallthrough
 
 AIIncreaseStat:

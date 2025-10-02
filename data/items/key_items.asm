@@ -39,6 +39,7 @@ KeyItemFlags:
 	dbit FALSE ; IRON
 	dbit FALSE ; CARBOS
 	dbit FALSE ; CALCIUM
+	dbit FALSE ; ZINC
 	dbit FALSE ; RARE_CANDY
 	dbit FALSE ; NORML_STONE
 	dbit FALSE ; FIRE_STONE
@@ -58,7 +59,7 @@ KeyItemFlags:
 	dbit TRUE  ; DOME_FOSSIL
 	dbit TRUE  ; HELIX_FOSSIL
 	dbit TRUE  ; SECRET_KEY
-	dbit TRUE  ; ITEM_2C
+	;dbit TRUE  ; ITEM_2C
 	dbit TRUE  ; BIKE_VOUCHER
 	dbit FALSE ; X_ACCURACY
 	;dbit FALSE ; LEAF_STONE
@@ -83,6 +84,7 @@ KeyItemFlags:
 	dbit FALSE ; X_DEFEND
 	dbit FALSE ; X_SPEED
 	dbit FALSE ; X_SPECIAL
+	dbit FALSE ; X_SP_DEF
 	dbit TRUE  ; COIN_CASE
 	dbit TRUE  ; OAKS_PARCEL
 	dbit TRUE  ; ITEMFINDER

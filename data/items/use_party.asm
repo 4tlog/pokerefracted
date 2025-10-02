@@ -19,6 +19,7 @@ UsableItems_PartyMenu:
 	db IRON
 	db CARBOS
 	db CALCIUM
+	db ZINC
 	db RARE_CANDY
 	db NORMAL_STONE
 	db FIRE_STONE
@@ -46,6 +47,7 @@ UsableItems_PartyMenu:
 	db X_DEFEND
 	db X_SPEED
 	db X_SPECIAL
+	db X_SP_DEF
 	db PP_UP
 	db ETHER
 	db MAX_ETHER

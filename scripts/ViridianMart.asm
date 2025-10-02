@@ -91,7 +91,7 @@ ViridianMartClerkParcelQuestText:
 	text_end
 
 ViridianMartClerkText:
-	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL, NORMAL_STONE, DRAGON_STONE
+	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
 
 ViridianMartYoungsterText:
 	text_far _ViridianMartYoungsterText

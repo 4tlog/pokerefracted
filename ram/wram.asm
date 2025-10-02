@@ -523,7 +523,7 @@ ENDU
 wMiscBattleDataEnd::
 ENDU
 
-; This union spans 39 bytes.
+; This union spans 45 bytes.
 UNION
 wInGameTradeGiveMonSpecies:: db
 wInGameTradeTextPointerTablePointer:: dw
@@ -540,6 +540,7 @@ wPlayerMonUnmodifiedAttack:: dw
 wPlayerMonUnmodifiedDefense:: dw
 wPlayerMonUnmodifiedSpeed:: dw
 wPlayerMonUnmodifiedSpecial:: dw
+wPlayerMonUnmodifiedSpclDef:: dw
 
 ; stat modifiers for the player's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -549,6 +550,7 @@ wPlayerMonAttackMod:: db
 wPlayerMonDefenseMod:: db
 wPlayerMonSpeedMod:: db
 wPlayerMonSpecialMod:: db
+wPlayerMonSpclDefMod:: db
 wPlayerMonAccuracyMod:: db
 wPlayerMonEvasionMod:: db
 	ds 2
@@ -562,6 +564,7 @@ wEnemyMonUnmodifiedAttack:: dw
 wEnemyMonUnmodifiedDefense:: dw
 wEnemyMonUnmodifiedSpeed:: dw
 wEnemyMonUnmodifiedSpecial:: dw
+wEnemyMonUnmodifiedSpclDef:: dw
 
 ; stat modifiers for the enemy's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -571,6 +574,7 @@ wEnemyMonAttackMod:: db
 wEnemyMonDefenseMod:: db
 wEnemyMonSpeedMod:: db
 wEnemyMonSpecialMod:: db
+wEnemyMonSpclDefMod:: db
 wEnemyMonAccuracyMod:: db
 wEnemyMonEvasionMod:: db
 	ds 2
@@ -1535,6 +1539,7 @@ wMonHBaseAttack:: db
 wMonHBaseDefense:: db
 wMonHBaseSpeed:: db
 wMonHBaseSpecial:: db
+wMonHBaseSpclDef:: db
 wMonHTypes::
 wMonHType1:: db
 wMonHType2:: db

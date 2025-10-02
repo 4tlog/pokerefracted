@@ -56,6 +56,7 @@ ItemUsePtrTable:
 	dw ItemUseVitamin    ; IRON
 	dw ItemUseVitamin    ; CARBOS
 	dw ItemUseVitamin    ; CALCIUM
+	dw ItemUseVitamin		 ; ZINC
 	dw ItemUseVitamin    ; RARE_CANDY
 	dw ItemUseVitamin		 ; NORMAL_STONE
 	dw ItemUseVitamin    ; FIRE_STONE
@@ -75,7 +76,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
-	dw UnusableItem      ; ITEM_2C
+	;dw UnusableItem      ; ITEM_2C
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	;dw ItemUseEvoStone   ; LEAF_STONE
@@ -100,6 +101,7 @@ ItemUsePtrTable:
 	dw ItemUseXStat      ; X_DEFEND
 	dw ItemUseXStat      ; X_SPEED
 	dw ItemUseXStat      ; X_SPECIAL
+	dw ItemUseXStat      ; X_SP_DEF
 	dw ItemUseCoinCase   ; COIN_CASE
 	dw ItemUseOaksParcel ; OAKS_PARCEL
 	dw ItemUseItemfinder ; ITEMFINDER
