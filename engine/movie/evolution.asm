@@ -83,11 +83,16 @@ EvolveMon:
 	call GetMonHeader
 	ld a, [wMonHType2]
 	ld [wTypeBuffer], a
+; the 3 lines from here are needed to set the current evolving pokemon again properly back to the old pokemon, fixes a naming bug
+; likely can condense this and just update wPokedexNum, wMonHIndex, and wCurSpecies, but would take more work to figure out how
+	ld a, [wEvoOldSpecies]
+	ld [wCurSpecies], a
+	call GetMonHeader
 .newType
-	pop af
-	pop bc
-	pop de
 	pop hl
+	pop de
+	pop bc
+	pop af
 
 	ld a, [wEvoNewSpecies]
 .done
