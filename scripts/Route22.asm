@@ -32,7 +32,7 @@ Route22GetRivalTrainerNoByStarterScript:
 	inc hl
 	jr .next_trainer_no
 .got_trainer_no
-	ld a, [hl]
+	ld a, 4;[hl] old value, instead going to load in the 4th Rival1Data
 	ld [wTrainerNo], a
 	ld a, 1
 	ld [wIsTrainerBattle], a

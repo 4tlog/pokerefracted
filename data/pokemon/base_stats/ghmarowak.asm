@@ -1,9 +1,9 @@
 	db DEX_G_MAROWAK ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  60,  80, 110,  45,  50,  80 ; 425 base stats (same stats as regular marowak)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GHOST, GROUND ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

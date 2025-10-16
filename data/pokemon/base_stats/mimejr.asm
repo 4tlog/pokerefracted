@@ -1,6 +1,6 @@
 	db DEX_MIME_JR ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  20,  25,  45,  60, 70,	90 ; 310 base stats
 	;   hp  atk  def  spd  spc	sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type

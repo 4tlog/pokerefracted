@@ -1,9 +1,9 @@
 	db DEX_SCIZOR ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  70,  130,  100,  65, 55,	80 ; 500 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db BUG, FLYING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

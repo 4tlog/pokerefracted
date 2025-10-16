@@ -1,9 +1,9 @@
 	db DEX_SLOWKING ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  95,  75,  80,  30, 100,	110 ; 490 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db PSYCHIC_TYPE, WATER ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -1,9 +1,9 @@
 	db DEX_RAYQUAZA ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  105,  150,  90,  95, 150,	90 ; 680 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db DRAGON, FLYING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

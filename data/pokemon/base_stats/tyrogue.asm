@@ -1,9 +1,9 @@
 	db DEX_TYROGUE ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  35,  35,  35,  35, 35,	35 ; 210 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIGHTING, FIGHTING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -1,9 +1,9 @@
 	db DEX_SHAYMIN ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  100,  103,  75,  127, 120,	75 ; 600 base stats (sky forme)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GRASS, FLYING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

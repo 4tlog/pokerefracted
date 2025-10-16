@@ -1,9 +1,9 @@
 	db DEX_TANGROWTH ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  100,  100,  125,  50, 110,	50 ; 535 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GRASS, GRASS ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -1,9 +1,9 @@
 	db DEX_ARCEUS ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  120,  120,  120,  120, 120,	120
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db NORMAL, NORMAL ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -1,9 +1,9 @@
 	db DEX_M_VICTREEBEL ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  80,  135,  95,  50, 130,	100 ; 590 base stats (stats unknown)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GRASS, POISON ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

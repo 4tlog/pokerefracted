@@ -1,9 +1,9 @@
 	db DEX_DOUBLADE ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  59,  110,  150,  35, 45,	49
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GHOST, GHOST ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

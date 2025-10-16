@@ -1,9 +1,9 @@
 	db DEX_I_VULPIX ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  38,  41,  40,  65,  50,  65 ; 299 base stats (same stats as vulpix)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ICE, ICE ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

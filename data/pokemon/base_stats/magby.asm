@@ -1,9 +1,9 @@
 	db DEX_MAGBY ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  45,  75,  37,  83, 70,	55 ; 365 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIRE, FIRE ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

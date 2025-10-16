@@ -165,8 +165,19 @@ _AddPartyMon::
 	ld a, [hli]       ; type 1
 	ld [de], a
 	inc de
+	ld a, [wEnemyTypeBuffer]
+	bit 7, a									; check if top bit of enemy buffer is 0 and can just give pokemon header type 2, or if 1, can give set type 2 as in data/trainers/parties.asm
+	jr z, .setSimple					; if top bit is 0 set pokemon type 2 by its header type
+
+	and $7F										; 0s the top bit to remove it as a flag
+	ld [de], a				; type 2 set by specified type in buffer
+	inc hl						; inc hl to move past type 2 in header (would normally be done by hli)
+	jr .type2Set
+
+.setSimple
 	ld a, [hli]       ; type 2
 	ld [de], a
+.type2Set
 	inc de
 	ld a, [hli]       ; catch rate (held item in gen 2)
 	ld [de], a

@@ -1,9 +1,9 @@
 	db DEX_M_CHARIZARDY ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  78,  104,  78,  100, 159,	115 ; 634 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIRE, FLYING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

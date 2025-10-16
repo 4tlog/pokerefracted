@@ -1,6 +1,6 @@
 	db DEX_M_ALAKAZAM ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  55,  50,  65,  150, 175,	105 ; 600 base stats
 	;   hp  atk  def  spd  spc	sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type

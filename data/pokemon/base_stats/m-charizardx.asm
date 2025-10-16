@@ -1,9 +1,9 @@
 	db DEX_M_CHARIZARDX ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  78,  130,  111,  100, 130,	85 ; 634 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIRE, DRAGON ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

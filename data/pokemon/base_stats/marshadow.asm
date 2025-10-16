@@ -1,9 +1,9 @@
 	db DEX_MARSHADOW ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  90,  125,  80,  125, 90,	90 ; 600 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIGHTING, GHOST ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

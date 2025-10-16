@@ -1,6 +1,6 @@
 	db DEX_P_RAPIDASH ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  65, 100,  70, 105,  80,  80 ; 500 base stats (same as rapidash)
 	;   hp  atk  def  spd  spc	sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type

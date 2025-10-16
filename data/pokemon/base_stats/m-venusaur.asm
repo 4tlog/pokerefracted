@@ -1,9 +1,9 @@
 	db DEX_M_VENUSAUR ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  80,  100,  123,  80, 122,	120 ; 625 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GRASS, POISON ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

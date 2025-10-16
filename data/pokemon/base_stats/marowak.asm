@@ -3,7 +3,7 @@
 	db  60,  80, 110,  45,  50,  80
 	;   hp  atk  def  spd  spc	sdf
 
-	db GROUND, GROUND ; type
+	db GROUND, NORMAL ; type
 	db 75 ; catch rate
 	db 124 ; base exp
 

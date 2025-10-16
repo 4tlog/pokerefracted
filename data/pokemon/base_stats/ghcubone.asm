@@ -1,9 +1,9 @@
 	db DEX_G_CUBONE ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  50,  50,  95,  35,  40,  50 ;320 base stats (same stats as regular cubone)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GHOST, GROUND ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

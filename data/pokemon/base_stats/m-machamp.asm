@@ -1,9 +1,9 @@
 	db DEX_M_MACHAMP ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  90,  180,  100,  70, 80,	85 ; 605 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db FIGHTING, FIGHTING ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

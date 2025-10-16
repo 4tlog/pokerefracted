@@ -1,9 +1,9 @@
 	db DEX_DIANCIE ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  50,  150,  100,  100, 150,	100 ; Semi mega Diancie, switched attack and defense stats, as well as giving 50 speed, 650 base stats total
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ROCK, ROCK ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

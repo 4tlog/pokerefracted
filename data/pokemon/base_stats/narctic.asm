@@ -1,9 +1,9 @@
 	db DEX_NARCTIC ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  90,  95,  70,  95, 125,	80 ; 555 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ICE, WATER ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

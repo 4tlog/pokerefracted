@@ -1,9 +1,9 @@
 	db DEX_M_LAPRAS ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  130,  135,  80,  60, 135,	95 ; 635 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ICE, WATER ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -1,9 +1,9 @@
 	db DEX_FARFETCHD ; pokedex id
 
-	db  52,  90,  55,  60,  58,  62
+	db  52,  95,  55,  55,  58,  62 ; 377 base stats (galarian farfetch'd stats)
 	;   hp  atk  def  spd  spc	sdf
 
-	db NORMAL, FLYING ; type
+	db FLYING, FIGHTING ; type
 	db 45 ; catch rate
 	db 94 ; base exp
 

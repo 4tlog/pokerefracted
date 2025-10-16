@@ -76,6 +76,9 @@ ReadTrainer:
 	ld [wCurEnemyLevel], a
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	ld a, [hli]
+	or $80 ; top bit set to 1 as a check for enemy mon
+	ld [wEnemyTypeBuffer], a
 	ld a, ENEMY_PARTY_DATA
 	ld [wMonDataLocation], a
 	push hl

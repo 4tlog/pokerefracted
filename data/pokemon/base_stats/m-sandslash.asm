@@ -1,9 +1,9 @@
 	db DEX_M_SANDSLASH ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  75,  150,  140,  85, 45,	55 ; 550 base stats
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db GROUND, GROUND ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

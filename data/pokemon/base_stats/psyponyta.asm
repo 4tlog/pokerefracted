@@ -1,6 +1,6 @@
 	db DEX_P_PONYTA ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  50,  85,  55,  90,  65,  65 ; 410 base stats (same as ponyta)
 	;   hp  atk  def  spd  spc	sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type

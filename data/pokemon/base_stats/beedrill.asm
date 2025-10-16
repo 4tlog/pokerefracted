@@ -3,7 +3,7 @@
 	db  65,  90,  40,  75,  45,  80
 	;   hp  atk  def  spd  spc	sdf
 
-	db BUG, POISON ; type
+	db POISON, BUG ; type
 	db 45 ; catch rate
 	db 159 ; base exp
 

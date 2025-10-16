@@ -1,9 +1,9 @@
 	db DEX_I_NINETALES ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  73,  67,  75,  109, 81,	100 ; 505 base stats (same stats as ninetales)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ICE, ICE ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

@@ -236,7 +236,7 @@ StartersText:
   db "ZUBAT@"
   db "SANDSHREW@"
   db "PIDGEY@"
-  db "MIME JR.@"
+  db "DROWZEE@"
   db "CATERPIE@"
   db "GEODUDE@"
   db "HONEDGE@"

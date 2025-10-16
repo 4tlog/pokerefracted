@@ -1,9 +1,9 @@
 	db DEX_M_RAICHUY ; pokedex id
 
-	db  25,  20,  15,  90, 105,	10
+	db  60,  85,  50,  120,160,	110 ; 585 base stats (stats unknown)
 	;   hp  atk  def  spd  spc	sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db ELECTRIC, ELECTRIC ; type
 	db 200 ; catch rate
 	db 73 ; base exp
 

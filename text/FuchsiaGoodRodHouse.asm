@@ -1,21 +1,21 @@
 _FuchsiaGoodRodHouseFishingGuruText::
-	text "I'm the FISHING"
-	line "GURU's older"
-	cont "brother!"
+	text "Hey, that fisher"
+	line "over there gave"
+	cont "me this."
 
-	para "I simply Looove"
+	para "But I don't like"
 	line "fishing!"
 
-	para "Do you like to"
-	line "fish?"
+	para "Will you take"
+	line "it instead?"
 	done
 
 _FuchsiaGoodRodHouseFishingGuruReceivedGoodRodText::
-	text "Grand! I like"
-	line "your style!"
+	text "Awesome! I hope"
+	line "you enjoy it!"
 
-	para "Take this and"
-	line "fish, young one!"
+	para "Here you go!"
+	line "Happy fishing!"
 
 	para "<PLAYER> received"
 	line "a @"
@@ -40,5 +40,5 @@ _FuchsiaGoodRodHouseFishingGuruNoRoomText::
 	text "Oh no!"
 
 	para "You have no room"
-	line "for my gift!"
+	line "for it!"
 	done

@@ -3,7 +3,7 @@
 	db  90,  92,  87,  76,  75,  85
 	;   hp  atk  def  spd  spc	sdf
 
-	db POISON, GROUND ; type
+	db GROUND, POISON ; type
 	db 45 ; catch rate
 	db 194 ; base exp
 
