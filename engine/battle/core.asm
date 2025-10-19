@@ -1167,6 +1167,17 @@ ChooseNextMon:
 .monChosen
 	call HasMonFainted
 	jr z, .goBackToPartyMenu ; if mon fainted, you have to choose another
+	
+	ld a, [wPlayerMonNumber]
+	ld d, a
+	ld a, [wWhichPokemon]
+	cp d ; check if the mon to switch to is already out
+	jr nz, .notAlreadyOut
+; mon is already out
+	ld hl, AlreadyOutText
+	call PrintText
+	jr .goBackToPartyMenu
+.notAlreadyOut
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr nz, .notLinkBattle
@@ -1191,7 +1202,7 @@ ChooseNextMon:
 	call GBPalWhiteOut
 	call LoadHudTilePatterns
 	call LoadScreenTilesFromBuffer1
-	call RunDefaultPaletteCommand
+	call RunDefaultPaletteCommand   ;after sendoutmon?
 	call GBPalNormal
 	call SendOutMon
 	ld hl, wEnemyMonHP

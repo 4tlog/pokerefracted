@@ -860,15 +860,18 @@ SwitchAndTeleportEffect:
 	inc a
 	ld [wEscapedFromBattle], a
 	ld a, [wPlayerMoveNum]
-	jr .playAnimAndPrintText
+	jp .playAnimAndPrintText
 .notWildBattle1
-	ld c, 50
-	call DelayFrames
-	ld hl, IsUnaffectedText
 	ld a, [wPlayerMoveNum]
 	cp TELEPORT
-	jp nz, PrintText
+	jp nz, .forceEnemySwitch
+	ld c, 50
+	call DelayFrames
 	jp PrintButItFailedText_
+.forceEnemySwitch
+	callfar CheckForceSwitchEnemyMon
+	ret
+	
 .handleEnemy
 	ld a, [wIsInBattle]
 	dec a
@@ -904,13 +907,43 @@ SwitchAndTeleportEffect:
 	ld a, [wEnemyMoveNum]
 	jr .playAnimAndPrintText
 .notWildBattle2
-	ld c, 50
-	call DelayFrames
-	ld hl, IsUnaffectedText
 	ld a, [wEnemyMoveNum]
 	cp TELEPORT
-	jp nz, PrintText
+	jp nz, .forcePlayerSwitch
+	ld c, 50
+	call DelayFrames
 	jp ConditionalPrintButItFailed
+.forcePlayerSwitch
+	jp CheckForceSwitchPlayerMon
+
+	;ld a, [wEnemyMoveNum]
+	;ld [wAnimationID], a
+	;ld hl, RanAwayScaredText
+	;cp ROAR
+	;jp z, .continue
+	;ld hl, WasBlownAwayText
+;.continue
+	;push hl
+	;call PlayBattleAnimationGotID
+	;ld c, 20
+	;call DelayFrames
+	;pop hl
+	;call PrintText
+	;ld a, 1
+	;ld [wForceSwitch], a
+	;ld a, $1 ;act like party menu is selected
+	;jp PartyMenuOrRockOrRun
+
+;ld a, [wPlayerMoveNum]
+	;cp TELEPORT
+	;jp nz, .forceEnemySwitch
+	;ld c, 50
+	;call DelayFrames
+	;jp PrintButItFailedText_
+;.forceEnemySwitch
+	;callfar CheckForceSwitchEnemyMon
+	;ret
+
 .playAnimAndPrintText
 	push af
 	call PlayBattleAnimation
@@ -1514,3 +1547,53 @@ PlayBattleAnimationGotID:
 	pop de
 	pop hl
 	ret
+
+CheckForceSwitchPlayerMon:
+; enemy trainer switches if there are 2 or more unfainted mons in party
+	ld a, [wPartyCount]
+	ld c, a
+	ld hl, wPartyMon1HP
+
+	ld d, 0 ; keep count of unfainted monsters
+
+	; count how many monsters haven't fainted yet
+.loop
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	or b
+	jr z, .Fainted ; has monster fainted?
+	inc d
+.Fainted
+	push bc
+	ld bc, wPartyMon2 - wPartyMon1
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .loop
+	
+	ld a, d ; how many available monsters are there?
+	cp 2    ; don't bother if only 1
+	jp nc, ForceSwitchPlayerMon
+	and a
+	ld c, 50
+	call DelayFrames
+	ld hl, IsUnaffectedText
+	call PrintText
+	ret
+
+ForceSwitchPlayerMon:
+	ld a, [wEnemyMoveNum]
+	ld [wAnimationID], a
+	ld hl, RanAwayScaredText
+	cp ROAR
+	jp z, .continue
+	ld hl, WasBlownAwayText
+.continue
+	push hl
+	call PlayBattleAnimationGotID
+	ld c, 20
+	call DelayFrames
+	pop hl
+	call PrintText
+	jp HandlePlayerMonFainted.doUseNextMonDialogue
