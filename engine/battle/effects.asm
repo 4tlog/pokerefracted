@@ -918,7 +918,17 @@ SwitchAndTeleportEffect:
 
 .playAnimAndPrintText
 	push af
-	call PlayBattleAnimation
+	ld [wAnimationID], a
+	ldh a, [hWhoseTurn]
+	and a
+	ld a, [wPlayerMovePower]
+	jr z, .gotUsersPower
+	ld a, [wEnemyMovePower]
+.gotUsersPower
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
+	call PlayBattleAnimationGotID
+.skipAnimation
 	ld c, 20
 	call DelayFrames
 	pop af
@@ -927,6 +937,9 @@ SwitchAndTeleportEffect:
 	jr z, .printText
 	ld hl, RanAwayScaredText
 	cp ROAR
+	jr z, .printText
+	ld hl, KnockedAwayText
+	cp DRAGON_TAIL
 	jr z, .printText
 	ld hl, WasBlownAwayText
 .printText
@@ -938,6 +951,10 @@ RanFromBattleText:
 
 RanAwayScaredText:
 	text_far _RanAwayScaredText
+	text_end
+
+KnockedAwayText:
+	text_far _KnockedAwayText
 	text_end
 
 WasBlownAwayText:
@@ -1559,13 +1576,26 @@ ForceSwitchPlayerMon:
 	ld [wAnimationID], a
 	ld hl, RanAwayScaredText
 	cp ROAR
-	jp z, .continue
+	jr z, .continue
+	ld hl, KnockedAwayText
+	cp DRAGON_TAIL
+	jr z, .continue
 	ld hl, WasBlownAwayText
 .continue
 	push hl
+	ld a, [wEnemyMovePower]
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
 	call PlayBattleAnimationGotID
+.skipAnimation
 	ld c, 20
 	call DelayFrames
 	pop hl
 	call PrintText
-	jp HandlePlayerMonFainted.doUseNextMonDialogue
+	call PrintEmptyString
+	call SaveScreenTilesToBuffer1
+	call ReadPlayerMonCurHPAndStatus
+	call ChooseNextMon
+	ld a, CANNOT_MOVE
+	ld [wPlayerSelectedMove], a
+	ret

@@ -662,10 +662,17 @@ ForceSwitchEnemyMon:
 	ld hl, RoarWorkedText
 	cp ROAR
 	jp z, .continue
+	ld hl, KnockedAwayWorkedText
+	cp DRAGON_TAIL
+	jp z, .continue
 	ld hl, WhirlwindWorkedText
 .continue
 	push hl
+	ld a, [wPlayerMovePower]
+	and a ; Skip animation if damage dealing move
+	jr nz, .skipAnimation
 	farcall PlayBattleAnimationGotID
+.skipAnimation
 	ld c, 20
 	call DelayFrames
 	pop hl
@@ -689,6 +696,9 @@ ForceSwitchEnemyMon:
 	xor a
 	ld [wFirstMonsNotOutYet], a
 
+	ld a, CANNOT_MOVE						; makes it so that enemy wont use a move after being switched out
+	ld [wEnemySelectedMove], a
+
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z
@@ -701,6 +711,10 @@ UnaffectText:
 
 RoarWorkedText:
 	text_far _RanAwayScaredText
+	text_end
+
+KnockedAwayWorkedText:
+	text_far _KnockedAwayText
 	text_end
 
 WhirlwindWorkedText:

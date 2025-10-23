@@ -165,6 +165,8 @@ MoveSoundTable:
 	db SFX_BATTLE_26,          $f0, $ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
+	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; DRAGON_TAIL (COUNTER)
+	db SFX_BATTLE_12,          $00, $c0 ; TWISTER (GUST)
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

@@ -133,6 +133,11 @@ _RanAwayScaredText::
 	line "ran away scared!"
 	prompt
 
+_KnockedAwayText::
+	text "<TARGET>"
+	line "was knocked away!"
+	prompt
+
 _WasBlownAwayText::
 	text "<TARGET>"
 	line "was blown away!"

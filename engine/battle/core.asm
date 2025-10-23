@@ -3226,8 +3226,13 @@ PlayerCanExecuteMove:
 	ld hl, ResidualEffects1
 	ld de, 1
 	call IsInArray
-	jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
+	;jp c, JumpMoveEffect ; ResidualEffects1 moves skip damage calculation and accuracy tests
 	                    ; unless executed as part of their exclusive effect functions
+	jr nc, .notResidual1Effect
+	ld a, [wPlayerMovePower]
+	and a ; check if zero base power
+	jp z, JumpMoveEffect
+.notResidual1Effect
 	ld a, [wPlayerMoveEffect]
 	ld hl, SpecialEffectsCont
 	ld de, 1
@@ -5825,7 +5830,12 @@ EnemyCanExecuteMove:
 	ld hl, ResidualEffects1
 	ld de, $1
 	call IsInArray
-	jp c, JumpMoveEffect
+	;jp c, JumpMoveEffect
+	jr nc, .notResidual1EffectEnemy
+	ld a, [wEnemyMovePower]
+	and a ; Check if zero base power
+	jp z, JumpMoveEffect
+.notResidual1EffectEnemy
 	ld a, [wEnemyMoveEffect]
 	ld hl, SpecialEffectsCont
 	ld de, $1
