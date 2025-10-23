@@ -1202,7 +1202,7 @@ ChooseNextMon:
 	call GBPalWhiteOut
 	call LoadHudTilePatterns
 	call LoadScreenTilesFromBuffer1
-	call RunDefaultPaletteCommand   ;after sendoutmon?
+	call RunDefaultPaletteCommand
 	call GBPalNormal
 	call SendOutMon
 	ld hl, wEnemyMonHP

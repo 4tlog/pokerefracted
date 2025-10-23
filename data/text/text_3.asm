@@ -138,13 +138,6 @@ _WasBlownAwayText::
 	line "was blown away!"
 	prompt
 
-;_WasBlownAwayText:
-	;text "@
-	;text_ram wStringBuffe
-	;text " was
-	;line "blown away!
-	;promp
-
 _ChargeMoveEffectText::
 	text "<USER>@"
 	text_end

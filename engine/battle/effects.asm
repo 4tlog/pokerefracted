@@ -372,7 +372,7 @@ StatModifierUpEffect:
 	cp b ; can't raise stat past +6 ($d or 13)
 	jp c, PrintNothingHappenedText
 	ld a, [de]
-	cp ATTACK_UP1_EFFECT + $8 ; is it a +2 effect?
+	cp ATTACK_UP1_EFFECT + $9 ; is it a +2 effect? ;;updated from $8 to $9 with addition of special defense
 	jr c, .ok
 	inc b ; if so, increment stat mod again
 	ld a, $d
@@ -382,7 +382,7 @@ StatModifierUpEffect:
 .ok
 	ld [hl], b
 	ld a, c
-	cp NUM_STATS
+	cp NUM_STATS - 1 ; HP is not a combat modifiable stats, hence -1
 	jr nc, UpdateStatDone ; jump if mod affected is evasion/accuracy
 	push hl
 	ld hl, wBattleMonAttack + 1
@@ -600,7 +600,7 @@ StatModifierDownEffect:
 	dec b ; dec corresponding stat mod
 	jp z, CantLowerAnymore ; if stat mod is 1 (-6), can't lower anymore
 	ld a, [de]
-	cp ATTACK_DOWN2_EFFECT - $16 ; $24
+	cp ATTACK_DOWN2_EFFECT - $18 ; $24 (was $16, but have added 2 spcdef statmods)
 	jr c, .ok
 	cp EVASION_DOWN2_EFFECT + $5 ; $44
 	jr nc, .ok
@@ -610,7 +610,7 @@ StatModifierDownEffect:
 .ok
 	ld [hl], b ; save modified mod
 	ld a, c
-	cp NUM_STATS
+	cp NUM_STATS - 1 ; HP is not a combat modifiable stats, hence -1
 	jr nc, UpdateLoweredStatDone ; jump for evasion/accuracy
 	push hl
 	push de
@@ -915,34 +915,6 @@ SwitchAndTeleportEffect:
 	jp ConditionalPrintButItFailed
 .forcePlayerSwitch
 	jp CheckForceSwitchPlayerMon
-
-	;ld a, [wEnemyMoveNum]
-	;ld [wAnimationID], a
-	;ld hl, RanAwayScaredText
-	;cp ROAR
-	;jp z, .continue
-	;ld hl, WasBlownAwayText
-;.continue
-	;push hl
-	;call PlayBattleAnimationGotID
-	;ld c, 20
-	;call DelayFrames
-	;pop hl
-	;call PrintText
-	;ld a, 1
-	;ld [wForceSwitch], a
-	;ld a, $1 ;act like party menu is selected
-	;jp PartyMenuOrRockOrRun
-
-;ld a, [wPlayerMoveNum]
-	;cp TELEPORT
-	;jp nz, .forceEnemySwitch
-	;ld c, 50
-	;call DelayFrames
-	;jp PrintButItFailedText_
-;.forceEnemySwitch
-	;callfar CheckForceSwitchEnemyMon
-	;ret
 
 .playAnimAndPrintText
 	push af
@@ -1549,7 +1521,7 @@ PlayBattleAnimationGotID:
 	ret
 
 CheckForceSwitchPlayerMon:
-; enemy trainer switches if there are 2 or more unfainted mons in party
+; player switches if there are 2 or more unfainted mons in party
 	ld a, [wPartyCount]
 	ld c, a
 	ld hl, wPartyMon1HP
