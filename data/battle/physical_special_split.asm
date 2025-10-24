@@ -33,4 +33,7 @@ SpecialToPhysicalMoves:
         db ICE_PUNCH
 ; Dragon
         db DRAGON_TAIL
+        db DRAGON_RUSH
+        db OUTRAGE
+        db DRAGON_CLAW
         db -1 ; end

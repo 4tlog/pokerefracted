@@ -172,7 +172,12 @@
 	const SUBSTITUTE   ; a4
 	const DRAGON_TAIL	 ; a5
 	const TWISTER			 ; a6
-	const STRUGGLE     ; a7
+	const DRAGON_RUSH	 ; a7
+	const OUTRAGE			 ; a8
+	const DRAGON_CLAW	 ; a9
+	const DRACOMETEOR	 ; aa
+	const DRAGONPULSE	 ; ab
+	const STRUGGLE     ; ac
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff

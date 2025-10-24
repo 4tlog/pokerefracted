@@ -565,6 +565,8 @@ StatModifierDownEffect:
 	call CheckTargetSubstitute ; can't hit through substitute
 	jp nz, MoveMissed
 	ld a, [de]
+	cp ATK_SELF_DOWN2_SIDE_EFFECT
+	jr nc, .selfHarshlySideEffect
 	cp ATTACK_DOWN_SIDE_EFFECT
 	jr c, .nonSideEffect
 	call BattleRandom
@@ -572,6 +574,16 @@ StatModifierDownEffect:
 	jp nc, CantLowerAnymore
 	ld a, [de]
 	sub ATTACK_DOWN_SIDE_EFFECT ; map each stat to 0-4
+	jr .decrementStatMod
+.selfHarshlySideEffect
+	ld hl, wPlayerMonStatMods
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .affectUser
+	ld hl, wEnemyMonStatMods
+.affectUser
+	ld a, [de]
+	sub ATK_SELF_DOWN2_SIDE_EFFECT ; map each stat to 0-4
 	jr .decrementStatMod
 .nonSideEffect ; non-side effects only
 	push hl
@@ -603,10 +615,18 @@ StatModifierDownEffect:
 	cp ATTACK_DOWN2_EFFECT - $18 ; $24 (was $16, but have added 2 spcdef statmods)
 	jr c, .ok
 	cp EVASION_DOWN2_EFFECT + $5 ; $44
-	jr nc, .ok
+	jr nc, .selfFallHarshly
+.secondDecrement
 	dec b ; stat down 2 effects only (dec mod again)
 	jr nz, .ok
 	inc b ; increment mod to 1 (-6) if it would become 0 (-7)
+	jr .ok
+.selfFallHarshly
+	cp ATK_SELF_DOWN2_SIDE_EFFECT ; check lower bounds of self down 2 steps effects
+	jr c, .ok
+	cp CONFUSION_SIDE_EFFECT ; check upper bounds of self down 2 steps effects
+	jr nc, .ok
+	jr .secondDecrement
 .ok
 	ld [hl], b ; save modified mod
 	ld a, c
@@ -688,6 +708,7 @@ UpdateLoweredStatDone:
 	push de
 	call PrintStatText
 	pop de
+	push de
 	ld a, [de]
 	cp ATTACK_DOWN_SIDE_EFFECT ; for all side effects, move animation has already played, skip it
 	jr nc, .ApplyBadgeBoostsAndStatusPenalties
@@ -705,7 +726,18 @@ UpdateLoweredStatDone:
 	and a
 	call nz, ApplyBadgeStatBoosts ; whenever the player uses a stat-down move, badge boosts get reapplied again to every stat,
 	                              ; even to those not affected by the stat-down move (will be boosted further)
+	
+	pop de
+	ld a, [de]
+	cp ATK_SELF_DOWN2_SIDE_EFFECT
+	jr c, .opponentStat
+	cp CONFUSION_SIDE_EFFECT
+	jr nc, .opponentStat
+	ld hl, SelfStatsFellText
+	jr .next
+.opponentStat
 	ld hl, MonsStatsFellText
+.next
 	call PrintText
 
 ; These where probably added given that a stat-down move affecting speed or attack will override
@@ -758,6 +790,37 @@ FellText:
 	text_far _FellText
 	text_end
 
+;Currently only have moves which lead to self greatly falling stats, only use this if checking properly before calling
+SelfStatsFellText:
+	text_far _SelfStatsFellText
+	text_asm
+	ld hl, GreatlyFellText
+	ret
+
+;SelfStatsFellText:
+	;text_far _SelfStatsFellText
+	;text_asm
+	;ld hl, FellText
+	;ldh a, [hWhoseTurn]
+	;and a
+	;ld a, [wPlayerMoveEffect]
+	;jr z, .playerTurn
+	;ld a, [wEnemyMoveEffect]
+;.playerTurn
+;; check if the move's effect decreases a stat by 2
+	;cp BIDE_EFFECT
+	;ret c
+	;cp ATTACK_DOWN_SIDE_EFFECT
+	;jr nc, .checkSelfHarshly
+;.greatlyFell
+	;ld hl, GreatlyFellText
+	;jr .end
+;.checkSelfHarshly
+	;cp ATK_SELF_DOWN2_SIDE_EFFECT
+	;jr nc, .greatlyFell
+;.end
+	;ret
+
 PrintStatText:
 	ld hl, StatModTextStrings
 	ld c, "@"
@@ -805,7 +868,7 @@ BideEffect:
 	add XSTATITEM_ANIM
 	jp PlayBattleAnimation2
 
-ThrashPetalDanceEffect:
+ThrashPetalDanceEffect: ; and outrage
 	ld hl, wPlayerBattleStatus1
 	ld de, wPlayerNumAttacksLeft
 	ldh a, [hWhoseTurn]
@@ -814,12 +877,12 @@ ThrashPetalDanceEffect:
 	ld hl, wEnemyBattleStatus1
 	ld de, wEnemyNumAttacksLeft
 .thrashPetalDanceEffect
-	set THRASHING_ABOUT, [hl] ; mon is now using thrash/petal dance
+	set THRASHING_ABOUT, [hl] ; mon is now using thrash/petal dance/outrage
 	call BattleRandom
 	and $1
 	inc a
 	inc a
-	ld [de], a ; set thrash/petal dance counter to 2 or 3 at random
+	ld [de], a ; set thrash/petal dance/outrage counter to 2 or 3 at random
 	ldh a, [hWhoseTurn]
 	add SHRINKING_SQUARE_ANIM
 	jp PlayBattleAnimation2

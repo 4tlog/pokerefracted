@@ -167,6 +167,11 @@ MoveSoundTable:
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
 	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; DRAGON_TAIL (COUNTER)
 	db SFX_BATTLE_12,          $00, $c0 ; TWISTER (GUST)
+	db SFX_BATTLE_25,          $00, $10 ; DRAGON_RUSH (QUICK_ATTACK)
+	db SFX_BATTLE_26,          $20, $40 ; OUTRAGE (STRENGTH)
+	db SFX_SUPER_EFFECTIVE,    $f0, $ff ; DRAGON_CLAW (CRABHAMMER)
+	db SFX_BATTLE_25,          $00, $10 ; DRACOMETEOR (QUICK_ATTACK)
+	db SFX_BATTLE_27,          $00, $80 ; DRAGONPULSE (SONICBOOM)
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

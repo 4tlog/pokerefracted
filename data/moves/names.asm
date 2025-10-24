@@ -166,5 +166,10 @@ MoveNames::
 	li "SUBSTITUTE"
 	li "DRAGON TAIL"
 	li "TWISTER"
+	li "DRAGON RUSH"
+	li "OUTRAGE"
+	li "DRAGON CLAW"
+	li "DRACOMETEOR"
+	li "DRAGONPULSE"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

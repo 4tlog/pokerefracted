@@ -77,10 +77,11 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; SPEED_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; SPECIAL_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; SPCLDEF_DOWN_SIDE_EFFECT
-	dw StatModifierDownEffect    ; unused effect
-	dw StatModifierDownEffect    ; unused effect
-	dw StatModifierDownEffect    ; unused effect
-	dw StatModifierDownEffect    ; unused effect
+	dw StatModifierDownEffect    ; ATK_SELF_DOWN2_SIDE_EFFECT
+	dw StatModifierDownEffect    ; DEF_SELF_DOWN2_SIDE_EFFECT
+	dw StatModifierDownEffect    ; SPD_SELF_DOWN2_SIDE_EFFECT
+	dw StatModifierDownEffect    ; SPC_SELF_DOWN2_SIDE_EFFECT
+	dw StatModifierDownEffect    ; SDF_SELF_DOWN2_SIDE_EFFECT
 	dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
 	dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	dw NULL                      ; unused effect

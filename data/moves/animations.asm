@@ -166,6 +166,11 @@ AttackAnimationPointers:
 	dw SubstituteAnim
 	dw DragonTailAnim
 	dw TwisterAnim
+	dw DragonRushAnim
+	dw OutrageAnim
+	dw DragonClawAnim
+	dw DracometeorAnim
+	dw DragonpulseAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -248,6 +253,7 @@ DoubleSlapAnim:
 	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 5
 	db -1 ; end
 
+OutrageAnim:
 CometPunchAnim:
 	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
 	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
@@ -475,6 +481,7 @@ SingAnim:
 	battle_anim NO_MOVE, SUBANIM_1_MUSIC_CIRCLING_ENEMY, 1, 16
 	db -1 ; end
 
+DragonpulseAnim:
 SupersonicAnim:
 	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
 	db -1 ; end
@@ -757,6 +764,7 @@ AgilityAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
+DragonRushAnim:
 QuickAttackAnim:
 	battle_anim QUICK_ATTACK, SE_SLIDE_MON_OFF
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_MOVING, 1, 6
@@ -1078,6 +1086,7 @@ AcidArmorAnim:
 	battle_anim ACID_ARMOR, SE_SLIDE_MON_DOWN_AND_HIDE
 	db -1 ; end
 
+DragonClawAnim:
 CrabHammerAnim:
 	battle_anim CRABHAMMER, SUBANIM_1_STAR_BIG, 1, 6
 	battle_anim NO_MOVE, SUBANIM_0_SLICE_BOTH_SIDES, 0, 6
@@ -1287,4 +1296,13 @@ DragonTailAnim:
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	battle_anim NO_MOVE, SE_SLIDE_ENEMY_MON_OFF
+	db -1 ; end
+
+	DracometeorAnim:
+	battle_anim NO_MOVE, SE_HIDE_ENEMY_MON_PIC
+	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_FALL, 1, 1
+	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_FALL, 1, 1
+	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_FALL, 1, 1
+	battle_anim NO_MOVE, SE_SHOW_ENEMY_MON_PIC
+	battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	db -1 ; end

@@ -9,6 +9,7 @@ StatModTextStrings:
 	li "SPCL.ATK"
 	li "SPCL.DEF"
 	assert_list_length SPCLDEF_DOWN_SIDE_EFFECT - ATTACK_DOWN_SIDE_EFFECT + 1
+	assert_list_length SDF_SELF_DOWN2_SIDE_EFFECT - ATK_SELF_DOWN2_SIDE_EFFECT + 1
 	li "ACCURACY"
 	li "EVADE"
 	assert_list_length NUM_STAT_MODS - 2 ; two bytes are unused

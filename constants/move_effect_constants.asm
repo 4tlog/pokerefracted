@@ -81,10 +81,11 @@
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
 	const SPCLDEF_DOWN_SIDE_EFFECT
-	const_skip                       ; $48
-	const_skip                       ; $49
-	const_skip                       ; $4A
-	const_skip                       ; $4B
+	const ATK_SELF_DOWN2_SIDE_EFFECT     ; $48
+	const DEF_SELF_DOWN2_SIDE_EFFECT                       ; $49
+	const SPD_SELF_DOWN2_SIDE_EFFECT                       ; $4A
+	const SPC_SELF_DOWN2_SIDE_EFFECT   ; $4B
+	const SDF_SELF_DOWN2_SIDE_EFFECT
 	const CONFUSION_SIDE_EFFECT      ; $4C
 	const TWINEEDLE_EFFECT           ; $4D
 	const_skip                       ; $4E
